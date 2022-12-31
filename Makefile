@@ -28,7 +28,7 @@ format:
 
 .PHONY: lint
 lint:
-	python setup.py check -ms
+	validate-pyproject pyproject.toml
 	$(lint) --diff
 	$(black) --check --diff
 
@@ -75,7 +75,7 @@ clean:
 	@rm -f `find . -type f -name '.*~' `
 	@rm -rf .cache htmlcov *.egg-info build dist/*
 	@rm -f .coverage .coverage.* *.log
-	pip uninstall $(package)
+	@echo skipping not yet working pip uninstall $(package)
 	@rm -fr site/*
 
 
