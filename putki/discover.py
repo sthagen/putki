@@ -12,8 +12,12 @@ def root(within: str | pathlib.Path = '.') -> str:
     try:
         repo = Repo(within, search_parent_directories=True)
         try:
-            repo_root_folder = repo.git.rev_parse(show_toplevel=True)
-            return str(repo_root_folder)
+            repo_root = repo.git.rev_parse(show_toplevel=True)
+            start_here = pathlib.Path(repo_root)
+            for name in start_here.rglob('*'):
+                if name == 'tasks':
+                   return str(start_here / name)
+            return ''
         except GitCommandError:
             return ''
     except (InvalidGitRepositoryError, NoSuchPathError):
