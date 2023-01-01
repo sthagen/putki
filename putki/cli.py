@@ -1,13 +1,12 @@
 """Command line interface for pipeline (Finnish: putki) - discovering and executing a specific task description."""
 import logging
-import os
 import pathlib
 import sys
 
 import typer
 
 import putki.api as api
-from putki import APP_ALIAS, APP_NAME, DEBUG, DEFAULT_STRUCTURE_NAME, QUIET, VERBOSE, __version__ as APP_VERSION, log
+from putki import APP_NAME, DEFAULT_STRUCTURE_NAME, QUIET, __version__ as APP_VERSION, log
 
 app = typer.Typer(
     add_completion=False,

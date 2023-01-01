@@ -1,7 +1,6 @@
 import pathlib
 from typing import no_type_check
 
-import yaml
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 from git.repo import Repo
 
@@ -16,7 +15,7 @@ def root(within: str | pathlib.Path = '.') -> str:
             start_here = pathlib.Path(repo_root)
             for name in start_here.rglob('*'):
                 if name == 'tasks':
-                   return str(start_here / name)
+                    return str(start_here / name)
             return ''
         except GitCommandError:
             return ''

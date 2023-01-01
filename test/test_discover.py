@@ -1,5 +1,3 @@
-import pathlib
-
 import putki.discover as discover
 
 
