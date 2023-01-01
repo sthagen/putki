@@ -15,9 +15,9 @@ def root(within: str | pathlib.Path = '.') -> str:
         try:
             repo_root = repo.git.rev_parse(show_toplevel=True)
             start_here = pathlib.Path(repo_root)
-            for name in start_here.rglob('*'):
-                if name == 'tasks':
-                    return str(start_here / name)
+            for path in start_here.rglob('*'):
+                if str(path) == 'tasks' and path.is_dir():
+                    return str(start_here / path)
             return ''
         except GitCommandError:
             return ''
