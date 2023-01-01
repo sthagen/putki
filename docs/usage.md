@@ -16,11 +16,11 @@ The `tasks.yml` files offer the following structure:
 ---
 tasks:
 - wun:
-  repository: /local/path/to/root
-  branch: branch-name
-  folder: local/path/from/repo/root/to/folder/hosting/a/liitos/structures/file
+    repository: /local/path/to/root
+    branch: branch-name
+    folder: local/path/from/repo/root/to/folder/hosting/a/liitos/structures/file
 - two:
-  repository: git@example.com:orga/repo
-  branch: branch-name
-  folder: local/path/from/repo/root/to/folder/hosting/a/liitos/structures/file
+    repository: git@example.com:orga/repo
+    branch: branch-name
+    folder: local/path/from/repo/root/to/folder/hosting/a/liitos/structures/file
 ```
