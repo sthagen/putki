@@ -30,12 +30,13 @@ The preferred public clones of `putki` are:
 
 * [on codeberg](https://codeberg.org/sthagen/putki) - a democratic community-driven, non-profit software development platform operated by Codeberg e.V.
 * [at sourcehut](https://git.sr.ht/~sthagen/putki) - a collection of tools useful for software development.
+
 ## Contributions
 
 Please do not submit "pull requests" (I found no way to disable that "feature" on GitHub).
-If you like to share small changes under the repositories license please kindly do so by sending a patch set.
+If you like to share small changes under the repositories license please kindly do so by sending a patchset.
 You can either send such a patchset per email using [git send-email](https://git-send-email.io) or 
-if you are a sourcehut user by pointing your browser to [Prepare a patchset](https://git.sr.ht/~sthagen/putki/send-email).
+if you are a sourcehut user by pointing your browser to "[Prepare a patchset](https://git.sr.ht/~sthagen/putki/send-email)".
 
 # Status
 
