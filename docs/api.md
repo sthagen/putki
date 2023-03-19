@@ -7,66 +7,40 @@ Example discovery:
 ```python
 >>> import json
 >>> import putki.discover as api
->>> api.root('../local_putki_tasks_wun/tasks')
-'/some/where/local_putki_tasks_wun/tasks'
->>> jobs = api.tasks(api.root('../local_putki_tasks_wun/tasks'))
->>> print(json.dumps(jobs, indent=2))
-{
-  "schema": "https://git.sr.ht/~sthagen/putki/blob/default/schema/1/tasks.json",
-  "tasks": [
-    {
-      "id": "wun",
-      "source": {
-        "path": "/local/path/to/root"
-      }
-    },
-    {
-      "id": "two",
-      "source": {
-        "path": "git@example.com:orga/repo"
-      },
-      "branch": "another-branch-name",
-      "target": {
-          "root": "local/path/from/repo/root/to/folder/that/should/host/a/liitos/structures/file",
-          "name": "structures.yml",
-          "globs": [
-              "structure.yml"
-          ]
-      },
-      "discover": true
-    },
-    {
-      "id": "three-complicated-kind-of",
-      "source": {
-        "path_elements": {
-          "protocol": "https://",
-          "host": "example.com",
-          "port": 7999,
-          "user": null,
-          "token": null,
-          "service_root": "/some/funny/path/",
-          "address_template": "{{protocol}}{{host}}:{{port}}{{service_root}}project/orga/repos/repo"
-        }
-      },
-      "branch": "branch-name-too"
-    },
-    {
-      "id": "fourth-complicated-kind-of",
-      "source": {
-        "path_elements": {
-          "protocol": "https://",
-          "host": "your.needbucket.domain",
-          "port": 7999,
-          "user": "username",
-          "token": "MAGIC_PLACE",
-          "service_root": "/",
-          "address_template": "{{protocol}}{{user}}@{{host}}:{{port}}{{service_root}}yourproject/repo.git"
-        }
-      },
-      "branch": "another-branch-name-too"
+>>> api.root('~/d/bb/dilettants/src/mit/')
+'/some/where/d/bb/dilettants/src/mit/tasks'
+>>> task_map = api.tasks(api.root('~/d/bb/dilettants/src/mit/'))
+>>> tasks = api.combine(task_map)
+>>> print(json.dumps(tasks, indent=2))
+[
+  {
+    "id": "/wun",
+    "source": {
+      "path": "/local/path/to/root"
     }
-  ]
-}
+  },
+  {
+    "id": "/wun/wun",
+    "source": {
+      "path": "/local/path/to/another/root"
+    }
+  },
+  {
+    "id": "/wun/two",
+    "source": {
+      "path": "git@example.com:orga/repo"
+    },
+    "branch": "another-branch-name",
+    "target": {
+      "root": "local/path/from/repo/root/to/folder/that/should/host/a/liitos/structures/file",
+      "name": "structures.yml",
+      "globs": [
+        "structure.yml"
+      ]
+    },
+    "discover": true
+  }
+]
 ```
 
 ## JSON Schema

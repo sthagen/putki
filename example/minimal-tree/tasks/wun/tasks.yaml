@@ -1,0 +1,16 @@
+---
+schema: https://git.sr.ht/~sthagen/putki/blob/default/schema/1/tasks.json
+tasks:
+- id: wun
+  source:
+    path: "/local/path/to/another/root"
+- id: two
+  source:
+    path: git@example.com:orga/repo
+  branch: another-branch-name
+  target:
+    root: local/path/from/repo/root/to/folder/that/should/host/a/liitos/structures/file
+    name: structures.yml
+    globs:
+    - structure.yml
+  discover: true
