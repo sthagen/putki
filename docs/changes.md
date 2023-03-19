@@ -2,7 +2,8 @@
 
 ## 2023.3.19
 
-* Feature: Added a driver to establish the pipelines (<https://todo.sr.ht/~sthagen/putki/2>)
+* Feature: Enhanced the tasks model and provided a schema (<https://todo.sr.ht/~sthagen/putki/3>)
+* Fix: Provided a command line interface for verification (<https://todo.sr.ht/~sthagen/putki/4>)
 
 ## 2023.1.1
 
