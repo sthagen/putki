@@ -12,6 +12,13 @@ The order of execution is parallel per sub folders of the `/tasks` folder and le
 
 The resulting tasks file will maintain the uniqueness of the collected ids by prefixing with a path.
 
+Example: Collecting task with id `top` in top level tasks file as well as another task with id `top` from a tasks file at `/tasks/some/other/tasks.yml` results in the two task ids:
+
+```yaml
+- id: '/tasks/top'
+- id: '/tasks/some/other/top'
+```
+
 The `tasks.yml` files offer the following example structure and shall adhere to the schema at
 [/schema/1/tasks.json](https://git.sr.ht/~sthagen/putki/blob/default/schema/1/tasks.json):
 
@@ -53,7 +60,7 @@ The addressing is declared within a `source` object to cover two use cases:
 1. For simple source addressing needs the `path` key shall be set to the local path or remote clone URL of a public repository.
 2. Alternatively for more complex addressing the object `path_elements` is requireed providing the keys `protocol`, `host`, `port`, `service_root`, `user`, `token`, and `address_template`.
 
-    The former keys are expected to be present in the latter key value (guarded by the usual pairs of `{{` and `}}`each.
+    The former keys are expected to be present in the latter key value (each inserted between the usual pairs of `{{` and `}}`).
 
 As an example for the second use case some on-prem server product ...
 ```
