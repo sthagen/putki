@@ -93,7 +93,7 @@ Asking for the version:
 
 ```console
 ❯ putki version
-Pipeline (Finnish: putki) - discovering and executing a specific task description. version 2023.3.19+parent.983ce130
+Pipeline (Finnish: putki) - discovering and executing a specific task description. version 2023.3.20+parent.94c09fdc
 ```
 
 ### Version - Help
