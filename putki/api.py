@@ -4,6 +4,7 @@ import yaml
 import putki.discover as discover
 from putki import log
 
+
 @no_type_check
 def verify(doc_root, structure_name, target_key, facet_key, options) -> int:
     """Yes."""
