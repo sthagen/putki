@@ -14,7 +14,7 @@ The `tasks.yml` files offer the following structure:
 
 ```yaml
 ---
-schema: https://git.sr.ht/~sthagen/putki/blob/default/schema/1/tasks/index.json
+schema: https://git.sr.ht/~sthagen/putki/blob/default/schema/1/tasks.json
 tasks:
 - id: wun
   source:
@@ -23,7 +23,11 @@ tasks:
   source:
     path: git@example.com:orga/repo
   branch: another-branch-name
-  folder: local/path/from/repo/root/to/folder/that/should/host/a/liitos/structures/file
+  target:
+    root: local/path/from/repo/root/to/folder/that/should/host/a/liitos/structures/file
+    name: structures.yml
+    globs:
+    - structure.yml
   discover: true
 - id: three-complicated-kind-of
   source:
@@ -36,10 +40,9 @@ tasks:
       service_root: "/some/funny/path/"
       address_template: "{{protocol}}{{host}}:{{port}}{{service_root}}project/orga/repos/repo"
   branch: branch-name-too
-  folder: local/path/from/repo/root/to/folder/hosting/a/liitos/structures/file
 ```
 
-The default values for the keys `branch` and `folder` are `default` and `/`respectively.
+The default values for the key `branch` is `default`.
 The `discover` value is assumed to be `false` per default.
 
 The addressing is declared within a `source` object to cover two use cases:
@@ -57,7 +60,7 @@ https://username@your.needbucket.domain:7999/yourproject/repo.git
 ... could be represented as:
 ```yaml
 ---
-schema: https://git.sr.ht/~sthagen/putki/blob/default/schema/1/tasks/index.json
+schema: https://git.sr.ht/~sthagen/putki/blob/default/schema/1/tasks.json
 tasks:
 - id: fourth-complicated-kind-of
   source:
@@ -70,9 +73,8 @@ tasks:
       service_root: "/"
       address_template: "{{protocol}}{{user}}@{{host}}:{{port}}{{service_root}}yourproject/repo.git"
   branch: another-branch-name-too
-  folder: local/path/from/repo/root/to/folder/hosting/a/liitos/structures/file
 ```
 
 The `putki`configuration provides the policy for processing upstream access credentials.
 
-In case the executing process environment does not provide a token in the `PUTKI_MAGIC_PLACE`(derived from the task `token` key value by adding the application prefix, the processor may override the given user value with a functional local default user as fallback (using some locally available token or pass phrase).
+In case the executing process environment does not provide a token in the `PUTKI_TOKEN_MAGIC_PLACE`(derived from the task `token` key value by adding the `PUTKI_TOKEN_` prefix, the processor may override the given user value with a functional local default user as fallback (using some locally available token or pass phrase).

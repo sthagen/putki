@@ -12,15 +12,13 @@ Example discovery:
 >>> jobs = api.tasks(api.root('../local_putki_tasks_wun/tasks'))
 >>> print(json.dumps(jobs, indent=2))
 {
-  "schema": "https://git.sr.ht/~sthagen/putki/blob/default/schema/1/tasks/index.json",
+  "schema": "https://git.sr.ht/~sthagen/putki/blob/default/schema/1/tasks.json",
   "tasks": [
     {
       "id": "wun",
       "source": {
         "path": "/local/path/to/root"
-      },
-      "branch": "branch-name",
-      "folder": "local/path/from/repo/root/to/folder/hosting/a/liitos/structures/file"
+      }
     },
     {
       "id": "two",
@@ -28,7 +26,13 @@ Example discovery:
         "path": "git@example.com:orga/repo"
       },
       "branch": "another-branch-name",
-      "folder": "local/path/from/repo/root/to/folder/that/should/host/a/liitos/structures/file",
+      "target": {
+          "root": "local/path/from/repo/root/to/folder/that/should/host/a/liitos/structures/file",
+          "name": "structures.yml",
+          "globs": [
+              "structure.yml"
+          ]
+      },
       "discover": true
     },
     {
@@ -44,8 +48,7 @@ Example discovery:
           "address_template": "{{protocol}}{{host}}:{{port}}{{service_root}}project/orga/repos/repo"
         }
       },
-      "branch": "branch-name-too",
-      "folder": "local/path/from/repo/root/to/folder/hosting/a/liitos/structures/file"
+      "branch": "branch-name-too"
     },
     {
       "id": "fourth-complicated-kind-of",
@@ -60,8 +63,7 @@ Example discovery:
           "address_template": "{{protocol}}{{user}}@{{host}}:{{port}}{{service_root}}yourproject/repo.git"
         }
       },
-      "branch": "another-branch-name-too",
-      "folder": "local/path/from/repo/root/to/folder/hosting/a/liitos/structures/file"
+      "branch": "another-branch-name-too"
     }
   ]
 }
@@ -69,7 +71,7 @@ Example discovery:
 
 ## JSON Schema
 
-The JSON schema is provided per <https://git.sr.ht/~sthagen/putki/blob/default/schema/1/tasks/index.json>.
+The JSON schema is provided per <https://git.sr.ht/~sthagen/putki/blob/default/schema/1/tasks.json>.
 
 As a service to the user it is stated below:
 
@@ -140,6 +142,36 @@ As a service to the user it is stated below:
         }
       }
     },
+    "target_type": {
+      "type": "object",
+      "properties": {
+        "root": {
+          "type": "string",
+          "examples": [
+            "local/path/from/repo/root/to/folder/that/should/host/a/liitos/structures/file"
+          ],
+          "default": ""
+        },
+        "name": {
+          "type": "string",
+          "examples": [
+            "structures.yml"
+          ],
+          "default": "structures.yml"
+        },
+        "globs": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "string",
+                "examples": [
+                  "structure.yml"
+                ],
+                "default": "structure.yml"
+            }
+        }
+      }
+    },
     "task_type": {
       "type": "object",
       "properties": {
@@ -167,12 +199,8 @@ As a service to the user it is stated below:
           ],
           "default": "default"
         },
-        "folder": {
-          "type": "string",
-          "examples": [
-            "local/path/from/repo/root/to/folder/hosting/a/liitos/structures/file"
-          ],
-          "default": "/"
+        "target": {
+          "$ref": "#/$defs/target_type"
         },
         "discover": {
           "type": "boolean",
@@ -180,10 +208,8 @@ As a service to the user it is stated below:
         }
       },
       "required": [
-        "folder",
         "id",
-        "source",
-        "branch"
+        "source"
       ]
     },
     "tasks_type": {
