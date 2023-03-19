@@ -1,54 +1,54 @@
 {
-    "$schema": "https://git.sr.ht/~sthagen/putki/blob/default/schema/1/tasks/index.json",
-    "tasks": [
-        {
-            "id": "wun",
-            "source": {
-                "path": "/local/path/to/root"
-            },
-            "branch": "branch-name",
-            "folder": "local/path/from/repo/root/to/folder/hosting/a/liitos/structures/file"
-        },
-        {
-            "id": "two",
-            "source": {
-                "path": "git@example.com:orga/repo"
-            },
-            "branch": "another-branch-name",
-            "folder": "local/path/from/repo/root/to/folder/that/should/host/a/liitos/structures/file",
-            "discover": true
-        },
-        {
-            "id": "three-complicated-kind-of",
-            "source": {
-                "path_elements": {
-                    "protocol": "https://",
-                    "host": "example.com",
-                    "port": 7999,
-                    "user": null,
-                    "token": null,
-                    "service_root": "/some/funny/path/",
-                    "address_template": "{{protocol}}{{host}}:{{port}}{{service_root}}project/orga/repos/repo"
-                }
-            },
-            "branch": "branch-name-too",
-            "folder": "local/path/from/repo/root/to/folder/hosting/a/liitos/structures/file"
-        },
-        {
-            "id": "fourth-complicated-kind-of",
-            "source": {
-                "path_elements": {
-                    "protocol": "https://",
-                    "host": "your.needbucket.domain",
-                    "port": 7999,
-                    "user": "username",
-                    "token": "MAGIC_PLACE",
-                    "service_root": "/",
-                    "address_template": "{{protocol}}{{user}}@{{host}}:{{port}}{{service_root}}yourproject/repo.git"
-                }
-            },
-            "branch": "another-branch-name-too",
-            "folder": "local/path/from/repo/root/to/folder/hosting/a/liitos/structures/file"
+  "schema": "https://git.sr.ht/~sthagen/putki/blob/default/schema/1/tasks/index.json",
+  "tasks": [
+    {
+      "id": "wun",
+      "source": {
+        "path": "/local/path/to/root"
+      },
+      "branch": "branch-name",
+      "folder": "local/path/from/repo/root/to/folder/hosting/a/liitos/structures/file"
+    },
+    {
+      "id": "two",
+      "source": {
+        "path": "git@example.com:orga/repo"
+      },
+      "branch": "another-branch-name",
+      "folder": "local/path/from/repo/root/to/folder/that/should/host/a/liitos/structures/file",
+      "discover": true
+    },
+    {
+      "id": "three-complicated-kind-of",
+      "source": {
+        "path_elements": {
+          "protocol": "https://",
+          "host": "example.com",
+          "port": 7999,
+          "user": null,
+          "token": null,
+          "service_root": "/some/funny/path/",
+          "address_template": "{{protocol}}{{host}}:{{port}}{{service_root}}project/orga/repos/repo"
         }
-    ]
+      },
+      "branch": "branch-name-too",
+      "folder": "local/path/from/repo/root/to/folder/hosting/a/liitos/structures/file"
+    },
+    {
+      "id": "fourth-complicated-kind-of",
+      "source": {
+        "path_elements": {
+          "protocol": "https://",
+          "host": "your.needbucket.domain",
+          "port": 7999,
+          "user": "username",
+          "token": "MAGIC_PLACE",
+          "service_root": "/",
+          "address_template": "{{protocol}}{{user}}@{{host}}:{{port}}{{service_root}}yourproject/repo.git"
+        }
+      },
+      "branch": "another-branch-name-too",
+      "folder": "local/path/from/repo/root/to/folder/hosting/a/liitos/structures/file"
+    }
+  ]
 }
