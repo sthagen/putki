@@ -13,7 +13,7 @@ The order of execution is parallel per sub folders of the `/tasks` folder and le
 The resulting tasks file will maintain the uniqueness of the collected ids by prefixing with a path.
 
 The `tasks.yml` files offer the following example structure and shall adhere to the schema at
-<https://git.sr.ht/~sthagen/putki/blob/default/schema/1/tasks.json>:
+[/schema/1/tasks.json](https://git.sr.ht/~sthagen/putki/blob/default/schema/1/tasks.json):
 
 ```yaml
 ---

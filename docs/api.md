@@ -71,7 +71,7 @@ Example discovery:
 
 ## JSON Schema
 
-The JSON schema is provided per <https://git.sr.ht/~sthagen/putki/blob/default/schema/1/tasks.json>.
+The JSON schema is provided per [/schema/1/tasks.json](https://git.sr.ht/~sthagen/putki/blob/default/schema/1/tasks.json).
 
 As a service to the user it is stated below:
 
