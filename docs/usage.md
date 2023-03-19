@@ -49,12 +49,12 @@ The addressing is declared within a `source` object to cover two use cases:
 
     The former keys are expected to be present in the latter key value (guarded by the usual pairs of `{{` and `}}`each.
 
-    Example for some on-prem server product:
-    ```
-    https://username@your.needbucket.domain:7999/yourproject/repo.git
-    ```
+As an example for the second use case some on-prem server product ...
+```
+https://username@your.needbucket.domain:7999/yourproject/repo.git
+```
 
-Could be represented as:
+... could be represented as:
 ```yaml
 ---
 schema: https://git.sr.ht/~sthagen/putki/blob/default/schema/1/tasks/index.json
