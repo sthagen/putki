@@ -46,6 +46,27 @@ type: object
         examples:
         - "{{protocol}}{{user}}@{{host}}:{{port}}{{service_root}}yourproject/repo.git"
         default: ''
+  target_type:
+    type: object
+    properties:
+      root:
+        type: string
+        examples:
+        - local/path/from/repo/root/to/folder/that/should/host/a/liitos/structures/file
+        default: ''
+      name:
+        type: string
+        examples:
+        - structures.yml
+        default: structures.yml
+      globs:
+        type: array
+        minItems: 0
+        items:
+          type: string
+          examples:
+          - structure.yml
+          default: structure.yml
   task_type:
     type: object
     properties:
@@ -63,19 +84,14 @@ type: object
         examples:
         - branch-name
         default: default
-      folder:
-        type: string
-        examples:
-        - local/path/from/repo/root/to/folder/hosting/a/liitos/structures/file
-        default: "/"
+      target:
+        "$ref": "#/$defs/target_type"
       discover:
         type: boolean
         default: false
     required:
-    - folder
     - id
     - source
-    - branch
   tasks_type:
     type: array
     minItems: 0
