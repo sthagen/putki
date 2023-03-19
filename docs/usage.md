@@ -4,13 +4,16 @@ Simple specialized pipeline library - probably not useful to many.
 
 ## Discovery
 
-Given a git repository URL discover the tasks pointing to other git repositories, branches, and folders.
+Given a git repository URL discover the tasks pointing to other local or remote git repositories, branches, and folder trees.
 
-Convention suggests a top level `/tasks` folder to recursively collect the `tasks.yml` files defining the tasks.
+Convention suggests a top level `/tasks` folder in the disptach repository to recursively collect the `tasks.yml` files defining the tasks.
 
 The order of execution is parallel per sub folders of the `/tasks` folder and lexically sequential per tasks files entries.
 
-The `tasks.yml` files offer the following structure:
+The resulting tasks file will maintain the uniqueness of the collected ids by prefixing with a path.
+
+The `tasks.yml` files offer the following example structure and shall adhere to the schema at
+<https://git.sr.ht/~sthagen/putki/blob/default/schema/1/tasks.json>:
 
 ```yaml
 ---
@@ -78,3 +81,10 @@ tasks:
 The `putki`configuration provides the policy for processing upstream access credentials.
 
 In case the executing process environment does not provide a token in the `PUTKI_TOKEN_MAGIC_PLACE`(derived from the task `token` key value by adding the `PUTKI_TOKEN_` prefix, the processor may override the given user value with a functional local default user as fallback (using some locally available token or pass phrase).
+
+The `target` object caters the use case when the targeted locations deviate from the convention to
+offer a `structures.yml` file in the top level directory of the folder tree that points to the
+individual `structure.yml` files within the tree.
+
+The expectation is that these files provide structural information that the tools
+[`navigaattori`](https://pypi.python.org/pypi/navigaattori/) and [`liitos`](https://pypi.python.org/pypi/liitos/) understand.
