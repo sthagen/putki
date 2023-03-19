@@ -2,6 +2,11 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema#",
   "type": "object",
   "$defs": {
+    "$schema": {
+      "description": "The URI of the JSON schema corresponding to the version.",
+      "type": "string",
+      "format": "uri"
+    },
     "path_type": {
       "type": "string",
       "examples": [
@@ -125,11 +130,15 @@
     }
   },
   "properties": {
+    "$schema": {
+      "$ref": "#/$defs/$schema"
+    },
     "tasks": {
       "$ref": "#/$defs/tasks_type"
     }
   },
   "required": [
     "tasks"
-  ]
+  ],
+  "additionalProperties": false
 }
