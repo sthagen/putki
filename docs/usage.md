@@ -5,7 +5,7 @@ Simple specialized pipeline library - probably not useful to many.
 ## Synopsis
 
 ```console
-❯ python -m putki
+❯ putki
 
  Usage: putki [OPTIONS] COMMAND [ARGS]...
 
