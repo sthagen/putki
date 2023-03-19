@@ -37,3 +37,17 @@ def tasks(below: str | pathlib.Path = '.') -> dict[str, list[dict[str, str]]]:
             if data and data.get('tasks', None):
                 jobs[str(path.parent)] = data['tasks']
     return jobs
+
+
+@no_type_check
+def combine(jobs: dict[str, list[dict[str, str]]]) -> list[dict[str, str]]:
+    """Combine the tasks by mapping the local ids to path prefixed ids."""
+    tasks: list[dict[str, str]] = []
+    common = min(sorted(jobs.keys()))
+    for path, job_seq in jobs.items():
+        prefix = path.replace(common, '', 1)
+        for task in job_seq:
+            local_id = task['id']
+            task['id'] = f'{prefix}/{local_id}'
+            tasks.append(task)
+    return tasks
