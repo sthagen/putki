@@ -82,7 +82,8 @@
             {
               "$ref": "#/$defs/path_elements_type"
             }
-          ],
+          ]
+         },
           "branch": {
             "type": "string",
             "examples": [
@@ -101,7 +102,6 @@
             "type": "boolean",
             "default": false
           }
-        }
       },
       "required": [
         "folder",
