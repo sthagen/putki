@@ -45,11 +45,14 @@ The `discover` value is assumed to be `false` per default.
 The addressing is declared within a `source` object to cover two use cases:
 
 1. For simple source addressing needs the `path` key shall be set to the local path or remote clone URL of a public repository.
-2. Alternatively for more complex addressing the object `path_elements` is requireed providing the keys `protocol`, `host`, `port`, `service_root`, `user`, `token`, and `address_template` The former keys are expected to be present in the latter key value (guarded by the usual pairs of `{{` and `}}`each. Example for some on-prem server product:
+2. Alternatively for more complex addressing the object `path_elements` is requireed providing the keys `protocol`, `host`, `port`, `service_root`, `user`, `token`, and `address_template`.
 
-```
-https://username@your.needbucket.domain:7999/yourproject/repo.git
-```
+    The former keys are expected to be present in the latter key value (guarded by the usual pairs of `{{` and `}}`each.
+
+    Example for some on-prem server product:
+    ```
+    https://username@your.needbucket.domain:7999/yourproject/repo.git
+    ```
 
 Could be represented as:
 ```yaml
