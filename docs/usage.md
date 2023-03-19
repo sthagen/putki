@@ -14,12 +14,11 @@ The `tasks.yml` files offer the following structure:
 
 ```yaml
 ---
+schema: https://git.sr.ht/~sthagen/putki/blob/default/schema/1/tasks/index.json
 tasks:
 - id: wun
   source:
     path: "/local/path/to/root"
-  branch: branch-name
-  folder: local/path/from/repo/root/to/folder/hosting/a/liitos/structures/file
 - id: two
   source:
     path: git@example.com:orga/repo
@@ -40,12 +39,13 @@ tasks:
   folder: local/path/from/repo/root/to/folder/hosting/a/liitos/structures/file
 ```
 
+The default values for the keys `branch` and `folder` are `default` and `/`respectively.
 The `discover` value is assumed to be `false` per default.
 
-The addressing is declared in the `source` object.
+The addressing is declared within a `source` object to cover two use cases:
 
-For simple source addressing needs the `path` key shall be set to the local path or remote clone URL of a public repository.
-Alternatively for more complex addressing the object `path_elements` is requireed providing the keys `protocol`, `host`, `port`, `service_root`, `user`, `token`, and `address_template` The former keys are expected to be present in the latter key value (guarded by the usual pairs of `{{` and `}}`each. Example for some on-prem server product:
+1. For simple source addressing needs the `path` key shall be set to the local path or remote clone URL of a public repository.
+2. Alternatively for more complex addressing the object `path_elements` is requireed providing the keys `protocol`, `host`, `port`, `service_root`, `user`, `token`, and `address_template` The former keys are expected to be present in the latter key value (guarded by the usual pairs of `{{` and `}}`each. Example for some on-prem server product:
 
 ```
 https://username@your.needbucket.domain:7999/yourproject/repo.git
@@ -54,6 +54,7 @@ https://username@your.needbucket.domain:7999/yourproject/repo.git
 Could be represented as:
 ```yaml
 ---
+schema: https://git.sr.ht/~sthagen/putki/blob/default/schema/1/tasks/index.json
 tasks:
 - id: fourth-complicated-kind-of
   source:
