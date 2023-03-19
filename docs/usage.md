@@ -35,29 +35,29 @@ Given a location that does not contain tasks files:
 Given a location that does indeed contain tasks files:
 
 ```console
-❯ putki verify -d example/minimal-tree/tasks/wun --verbose
-2023-03-19T21:53:41.381462+00:00 DEBUG [git.cmd]: Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/some/where, universal_newlines=False, shell=None, istream=None)
-2023-03-19T21:53:41.393209+00:00 INFO [PUTKI]: Identified tasks default root at /some/where/example/basic/tasks
-2023-03-19T21:53:41.394596+00:00 INFO [PUTKI]: Mapped tasks below specified root at example/minimal-tree/tasks/wun
-2023-03-19T21:53:41.394622+00:00 INFO [PUTKI]: The 1 tasks files collected below specified root at example/minimal-tree/tasks/wun are:
-2023-03-19T21:53:41.394638+00:00 INFO [PUTKI]: - example/minimal-tree/tasks/wun
-2023-03-19T21:53:41.394661+00:00 INFO [PUTKI]: Collected the following 2 tasks from 1 tasks files:
-2023-03-19T21:53:41.395184+00:00 INFO [PUTKI]: id: /wun
-2023-03-19T21:53:41.395202+00:00 INFO [PUTKI]: source:
-2023-03-19T21:53:41.395214+00:00 INFO [PUTKI]:   path: /local/path/to/another/root
-2023-03-19T21:53:41.395226+00:00 INFO [PUTKI]: ---
-2023-03-19T21:53:41.395237+00:00 INFO [PUTKI]: branch: another-branch-name
-2023-03-19T21:53:41.395249+00:00 INFO [PUTKI]: discover: true
-2023-03-19T21:53:41.395260+00:00 INFO [PUTKI]: id: /two
-2023-03-19T21:53:41.395271+00:00 INFO [PUTKI]: source:
-2023-03-19T21:53:41.395282+00:00 INFO [PUTKI]:   path: git@example.com:orga/repo
-2023-03-19T21:53:41.395293+00:00 INFO [PUTKI]: target:
-2023-03-19T21:53:41.395305+00:00 INFO [PUTKI]:   globs:
-2023-03-19T21:53:41.395316+00:00 INFO [PUTKI]:   - structure.yml
-2023-03-19T21:53:41.395327+00:00 INFO [PUTKI]:   name: structures.yml
-2023-03-19T21:53:41.395338+00:00 INFO [PUTKI]:   root: local/path/from/repo/root/to/folder/that/should/host/a/liitos/structures/file
-2023-03-19T21:53:41.395349+00:00 INFO [PUTKI]:
-2023-03-19T21:53:41.395361+00:00 INFO [PUTKI]: OK
+❯ python -m putki verify -d example/minimal-tree/tasks/wun --verbose 2>&1 | cut -c 34-
+DEBUG [git.cmd]: Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/some/where, universal_newlines=False, shell=None, istream=None)
+INFO [PUTKI]: Identified tasks default root at /some/where/example/basic/tasks
+INFO [PUTKI]: Mapped tasks below specified root at example/minimal-tree/tasks/wun
+INFO [PUTKI]: The 1 tasks files collected below specified root at example/minimal-tree/tasks/wun are:
+INFO [PUTKI]: - example/minimal-tree/tasks/wun
+INFO [PUTKI]: Collected the following 2 tasks from 1 tasks files:
+INFO [PUTKI]: id: /wun
+INFO [PUTKI]: source:
+INFO [PUTKI]:   path: /local/path/to/another/root
+INFO [PUTKI]: ---
+INFO [PUTKI]: branch: another-branch-name
+INFO [PUTKI]: discover: true
+INFO [PUTKI]: id: /two
+INFO [PUTKI]: source:
+INFO [PUTKI]:   path: git@example.com:orga/repo
+INFO [PUTKI]: target:
+INFO [PUTKI]:   globs:
+INFO [PUTKI]:   - structure.yml
+INFO [PUTKI]:   name: structures.yml
+INFO [PUTKI]:   root: local/path/from/repo/root/to/folder/that/should/host/a/liitos/structures/file
+INFO [PUTKI]:
+INFO [PUTKI]: OK
 ```
 
 ### Verification - Help
