@@ -83,25 +83,25 @@
               "$ref": "#/$defs/path_elements_type"
             }
           ]
-         },
-          "branch": {
-            "type": "string",
-            "examples": [
-              "branch-name"
-            ],
-            "default": "default"
-          },
-          "folder": {
-            "type": "string",
-            "examples": [
-              "local/path/from/repo/root/to/folder/hosting/a/liitos/structures/file"
-            ],
-            "default": "/"
-          },
-          "discover": {
-            "type": "boolean",
-            "default": false
-          }
+        },
+        "branch": {
+          "type": "string",
+          "examples": [
+            "branch-name"
+          ],
+          "default": "default"
+        },
+        "folder": {
+          "type": "string",
+          "examples": [
+            "local/path/from/repo/root/to/folder/hosting/a/liitos/structures/file"
+          ],
+          "default": "/"
+        },
+        "discover": {
+          "type": "boolean",
+          "default": false
+        }
       },
       "required": [
         "folder",
