@@ -1,5 +1,5 @@
 {
-  "schema": "https://git.sr.ht/~sthagen/putki/blob/default/schema/1/tasks/index.json",
+  "schema": "https://git.sr.ht/~sthagen/putki/blob/default/schema/1/tasks.json",
   "tasks": [
     {
       "id": "wun",
