@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema#",
+  "type": "object",
+  "$defs": {
+    "path_type": {
+      "type": "string",
+      "examples": [
+        "git@example.com:orga/repo"
+      ]
+    },
+    "path_elements_type": {
+      "type": "object",
+      "properties": {
+        "protocol": {
+          "type": "string",
+          "examples": [
+            "https://"
+          ],
+          "default": ""
+        },
+        "host": {
+          "type": "string",
+          "examples": [
+            "your.needbucket.domain"
+          ],
+          "default": ""
+        },
+        "port": {
+          "type": "string",
+          "default": ""
+        },
+        "user": {
+          "type": "string",
+          "examples": [
+            "username"
+          ],
+          "default": ""
+        },
+        "token": {
+          "type": "string",
+          "examples": [
+            "MAGIC_PLACE"
+          ],
+          "default": ""
+        },
+        "service_root": {
+          "type": "string",
+          "examples": [
+            "/"
+          ],
+          "default": ""
+        },
+        "address_template": {
+          "type": "string",
+          "examples": [
+            "{{protocol}}{{user}}@{{host}}:{{port}}{{service_root}}yourproject/repo.git"
+          ],
+          "default": ""
+        }
+      }
+    },
+    "task_type": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "examples": [
+            "wun"
+          ]
+        },
+        "source": {
+          "type": "object",
+          "oneOf": [
+            {
+              "$ref": "#/$defs/path_type"
+            },
+            {
+              "$ref": "#/$defs/path_elements_type"
+            }
+          ],
+          "branch": {
+            "type": "string",
+            "examples": [
+              "branch-name"
+            ],
+            "default": "default"
+          },
+          "folder": {
+            "type": "string",
+            "examples": [
+              "local/path/from/repo/root/to/folder/hosting/a/liitos/structures/file"
+            ],
+            "default": "/"
+          },
+          "discover": {
+            "type": "boolean",
+            "default": false
+          }
+        }
+      },
+      "required": [
+        "folder",
+        "id",
+        "source",
+        "branch"
+      ]
+    },
+    "tasks_type": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "$ref": "#/$defs/task_type"
+      }
+    },
+    "source_type": {
+      "type": "object",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/path_type"
+        },
+        {
+          "$ref": "#/$defs/path_elements_type"
+        }
+      ]
+    }
+  },
+  "properties": {
+    "tasks": {
+      "$ref": "#/$defs/tasks_type"
+    }
+  },
+  "required": [
+    "tasks"
+  ]
+}
