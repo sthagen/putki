@@ -19,7 +19,7 @@ tasks:
     path_elements:
       protocol: https://
       host: example.com
-      port: 7999
+      port: '7999'
       user:
       token:
       service_root: "/some/funny/path/"
@@ -30,7 +30,7 @@ tasks:
     path_elements:
       protocol: https://
       host: your.needbucket.domain
-      port: 7999
+      port: '7999'
       user: username
       token: MAGIC_PLACE
       service_root: "/"
