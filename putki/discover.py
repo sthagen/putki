@@ -57,9 +57,10 @@ def combine(jobs: dict[str, list[dict[str, str]]]) -> list[dict[str, str]]:
 def assemble_path(path_elements: dict[str, str]) -> str:
     """Assemble a connection string from /source/path_elements."""
     address_template = path_elements['address_template']
+    user = path_elements.get('user')
     return (
         address_template.replace('{{protocol}}', path_elements['protocol'])
-        .replace('{{user}}', path_elements.get('user', ''))
+        .replace('{{user}}', user if user is not None else '')
         .replace('{{host}}', path_elements['host'])
         .replace('{{port}}', path_elements['port'])
         .replace('{{service_root}}', path_elements['service_root'])
