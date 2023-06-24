@@ -1,8 +1,8 @@
 # Third Party Dependencies
 
 <!--[[[fill sbom_sha256()]]]-->
-The [SBOM in CycloneDX v1.4 JSON format](https://git.sr.ht/~sthagen/putki/blob/default/sbom.json) with SHA256 checksum ([6192b6a6 ...](https://git.sr.ht/~sthagen/putki/blob/default/sbom.json.sha256 "sha256:6192b6a6b59b371647e6db3ef3ad1726a6eda70956f2202b0eb5c108070201e4")).
-<!--[[[end]]] (checksum: db04a9bf218ce496c1023863b79d0da0)-->
+The [SBOM in CycloneDX v1.4 JSON format](https://git.sr.ht/~sthagen/putki/blob/default/sbom/cdx.json) with SHA256 checksum ([3503e15f ...](https://git.sr.ht/~sthagen/putki/blob/default/sbom/cdx.json.sha256 "sha256:3503e15fe1bf5ea1d0979ea9145b801e69ebfe96bc33956421d200e5aa90fce6")).
+<!--[[[end]]] (checksum: 4544dae2c733c7c5fbd2de1fe4c08a6c)-->
 ## Licenses 
 
 JSON files with complete license info of: [direct dependencies](direct-dependency-licenses.json) | [all dependencies](all-dependency-licenses.json)
@@ -12,10 +12,10 @@ JSON files with complete license info of: [direct dependencies](direct-dependenc
 <!--[[[fill direct_dependencies_table()]]]-->
 | Name                                                           | Version                                              | License     | Author                         | Description (from packaging data)                                    |
 |:---------------------------------------------------------------|:-----------------------------------------------------|:------------|:-------------------------------|:---------------------------------------------------------------------|
-| [GitPython](https://github.com/gitpython-developers/GitPython) | [3.1.30](https://pypi.org/project/GitPython/3.1.30/) | BSD License | Sebastian Thiel, Michael Trier | GitPython is a python library used to interact with Git repositories |
+| [GitPython](https://github.com/gitpython-developers/GitPython) | [3.1.31](https://pypi.org/project/GitPython/3.1.31/) | BSD License | Sebastian Thiel, Michael Trier | GitPython is a Python library used to interact with Git repositories |
 | [PyYAML](https://pyyaml.org/)                                  | [6.0](https://pypi.org/project/PyYAML/6.0/)          | MIT License | Kirill Simonov                 | YAML parser and emitter for Python                                   |
 | [typer](https://github.com/tiangolo/typer)                     | [0.7.0](https://pypi.org/project/typer/0.7.0/)       | MIT License | Sebastián Ramírez              | Typer, build great CLIs. Easy to code. Based on Python type hints.   |
-<!--[[[end]]] (checksum: 292e1d5ceb3df45b9beb1b00c42b48dd)-->
+<!--[[[end]]] (checksum: e660195e65e8fcc41affa03bf3568abf)-->
 
 ### Indirect Dependencies
 
@@ -41,11 +41,11 @@ Base graphviz file in dot format: [Trees of the direct dependencies](package-dep
 
 <!--[[[fill dependency_tree_console_text()]]]-->
 ````console
-GitPython==3.1.30
-  - gitdb [required: >=4.0.1,<5, installed: 4.0.10]
-    - smmap [required: >=3.0.1,<6, installed: 5.0.0]
+GitPython==3.1.31
+└── gitdb [required: >=4.0.1,<5, installed: 4.0.10]
+    └── smmap [required: >=3.0.1,<6, installed: 5.0.0]
 PyYAML==6.0
 typer==0.7.0
-  - click [required: >=7.1.1,<9.0.0, installed: 8.1.3]
+└── click [required: >=7.1.1,<9.0.0, installed: 8.1.3]
 ````
-<!--[[[end]]] (checksum: 81be5f00bcf3615451380d6d4a984715)-->
+<!--[[[end]]] (checksum: f3ba95e2f149c1d1fb6a61658f55bb01)-->
