@@ -21,7 +21,7 @@ keywords = ["developer-tools", "devops"]
 dependencies = [
     "GitPython >= 3.1.31",
     "PyYAML >= 6.0",
-    "typer >= 0.7.0",
+    "typer >= 0.9.0",
 ]
 requires-python = ">=3.10"
 
