@@ -1,5 +1,5 @@
 import pathlib
-from typing import no_type_check
+from typing import Union, no_type_check
 
 import yaml
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
@@ -8,7 +8,7 @@ from putki import ENCODING
 
 
 @no_type_check
-def root(within: str | pathlib.Path = '.') -> str:
+def root(within: Union[str, pathlib.Path] = '.') -> str:
     """Detect the root folder for tasks."""
     try:
         repo = Repo(within, search_parent_directories=True)
@@ -26,7 +26,7 @@ def root(within: str | pathlib.Path = '.') -> str:
 
 
 @no_type_check
-def tasks(below: str | pathlib.Path = '.') -> dict[str, list[dict[str, str]]]:
+def tasks(below: Union[str, pathlib.Path] = '.') -> dict[str, list[dict[str, str]]]:
     """Collect the tasks below by mapping the paths to lists of key value string maps."""
     jobs: dict[str, list[dict[str, str]]] = {}
     start_here = pathlib.Path(below)
@@ -68,14 +68,16 @@ def assemble_path(path_elements: dict[str, str]) -> str:
 
 
 @no_type_check
-def derive(tasks_seq: list[dict[str, str | dict[str, str]]]) -> dict[str, dict[str, str | int | dict[str, str]]]:
+def derive(
+    tasks_seq: list[dict[str, Union[str, dict[str, str]]]]
+) -> dict[str, dict[str, Union[str, int, dict[str, str]]]]:
     """Derive map with actionable names by mapping the path prefixed ids and assembling path elements."""
-    actions: dict[str, dict[str, str | int | dict[str, str]]] = {}
+    actions: dict[str, dict[str, Union[str, int, dict[str, str]]]] = {}
     for slot, task in enumerate(tasks_seq):
         folder_slug = task['id'].replace('/', '_')
 
-        action: dict[str, str | int] = {**task, 'rank': slot}
-        source: dict[str, str | dict[str, str]] = task['source']
+        action: dict[str, Union[str, int]] = {**task, 'rank': slot}
+        source: dict[str, Union[str, dict[str, str]]] = task['source']
         action['url'] = source['path'] if source.get('path') else assemble_path(source['path_elements'])
         actions[folder_slug] = action
 
