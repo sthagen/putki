@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "putki"
-version = "2023.6.27"
+version = "2023.6.26"
 description = "Pipeline (Finnish: putki) - discovering and executing a specific task description."
 readme = "README.md"
 authors = [{ name = "Stefan Hagen", email = "stefan@hagen.link" }]
