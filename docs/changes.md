@@ -1,7 +1,7 @@
 # Changes
 
-2023.6.27
-:    * Added a driver to establish the pipelines (<https://todo.sr.ht/~sthagen/putki/2>)
+2023.6.26
+:    * Enabled python 3.9 again for real
 
 2023.3.20
 :    * Fix: Runtime errors block start on python 3.9.13 (<https://todo.sr.ht/~sthagen/putki/5>) through supported version bump - sorry python 3.9
