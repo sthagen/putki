@@ -1,5 +1,8 @@
 # Changes
 
+2023.6.30
+:    * Added dulwich git backend library to prepare backend choices during runtime
+
 2023.6.26
 :    * Enabled python 3.9 again for real
 
