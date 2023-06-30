@@ -2,10 +2,10 @@
   "$schema": "http://cyclonedx.org/schema/bom-1.4.schema.json",
   "bomFormat": "CycloneDX",
   "specVersion": "1.4",
-  "serialNumber": "urn:uuid:5889d35b-c153-4c8f-964e-e5e446982308",
+  "serialNumber": "urn:uuid:550ce1bd-30a1-4d91-8204-6cae0b8984fc",
   "version": 1,
   "metadata": {
-    "timestamp": "2023-06-26T21:00:38.039320+00:00",
+    "timestamp": "2023-06-30T04:58:49.693842+00:00",
     "tools": [
       {
         "vendor": "CycloneDX",
@@ -56,21 +56,28 @@
   "components": [
     {
       "type": "library",
-      "bom-ref": "24569a93-bc32-4968-943f-b24266ca128a",
+      "bom-ref": "8263d552-db96-4ba7-b48c-2f69b6f436a8",
       "name": "GitPython",
       "version": "3.1.31",
       "purl": "pkg:pypi/gitpython@3.1.31"
     },
     {
       "type": "library",
-      "bom-ref": "8849f858-04e4-43b6-8281-95f04324a858",
+      "bom-ref": "04c58d6e-c0ae-432d-b00f-14508cd0f07c",
       "name": "PyYAML",
       "version": "6.0",
       "purl": "pkg:pypi/pyyaml@6.0"
     },
     {
       "type": "library",
-      "bom-ref": "abbf8f16-2fdd-417a-af8c-7c2bd728c75d",
+      "bom-ref": "18d347f1-07fb-423c-be3b-3d668c267f99",
+      "name": "dulwich",
+      "version": "0.21.5",
+      "purl": "pkg:pypi/dulwich@0.21.5"
+    },
+    {
+      "type": "library",
+      "bom-ref": "0d787b6f-54de-4181-82b2-3122a86228ba",
       "name": "typer",
       "version": "0.9.0",
       "purl": "pkg:pypi/typer@0.9.0"
@@ -78,15 +85,19 @@
   ],
   "dependencies": [
     {
-      "ref": "24569a93-bc32-4968-943f-b24266ca128a",
+      "ref": "8263d552-db96-4ba7-b48c-2f69b6f436a8",
       "dependsOn": []
     },
     {
-      "ref": "8849f858-04e4-43b6-8281-95f04324a858",
+      "ref": "04c58d6e-c0ae-432d-b00f-14508cd0f07c",
       "dependsOn": []
     },
     {
-      "ref": "abbf8f16-2fdd-417a-af8c-7c2bd728c75d",
+      "ref": "18d347f1-07fb-423c-be3b-3d668c267f99",
+      "dependsOn": []
+    },
+    {
+      "ref": "0d787b6f-54de-4181-82b2-3122a86228ba",
       "dependsOn": []
     }
   ]
