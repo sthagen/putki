@@ -4,3 +4,4 @@ packages:
 - gitdb
 - smmap
 - typing-extensions
+- urllib3
