@@ -12,7 +12,6 @@ Third party dependencies are documented in the folder [third-party](docs/third-p
 [![supported-versions](https://img.shields.io/pypi/pyversions/putki.svg?style=flat)](https://pypi.python.org/pypi/putki/)
 [![supported-implementations](https://img.shields.io/pypi/implementation/putki.svg?style=flat)](https://pypi.python.org/pypi/putki/)
 [![maintenance-status](https://img.shields.io/github/commit-activity/y/sthagen/putki.svg?style=flat)](https://git.sr.ht/~sthagen/putki/log)
-[![maintenance-status](https://img.shields.io/github/commit-activity/y/sthagen/putki.svg?style=flat)](https://git.sr.ht/~sthagen/putki/log)
 
 ## Documentation
 
