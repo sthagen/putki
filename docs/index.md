@@ -11,6 +11,7 @@ Third party dependencies are documented in the folder [third-party](third-party/
 [![wheel](https://img.shields.io/pypi/wheel/putki.svg?style=flat)](https://pypi.python.org/pypi/putki/)
 [![supported-versions](https://img.shields.io/pypi/pyversions/putki.svg?style=flat)](https://pypi.python.org/pypi/putki/)
 [![supported-implementations](https://img.shields.io/pypi/implementation/putki.svg?style=flat)](https://pypi.python.org/pypi/putki/)
+[![maintenance-status](https://img.shields.io/github/commit-activity/y/sthagen/putki.svg?style=flat)](https://git.sr.ht/~sthagen/putki/log)
 
 ## Bug Tracker
 
@@ -31,5 +32,5 @@ The preferred public clones of `putki` are:
 
 Please do not submit "pull requests" (I found no way to disable that "feature" on GitHub).
 If you like to share small changes under the repositories license please kindly do so by sending a patchset.
-You can either send such a patchset per email using [git send-email](https://git-send-email.io) or 
+You can either send such a patchset per email using [git send-email](https://git-send-email.io) or
 if you are a sourcehut user by selecting "Prepare a patchset" on the summary page of your fork at [sourcehut](https://git.sr.ht/).
