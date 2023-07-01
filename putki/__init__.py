@@ -12,16 +12,16 @@ __version_info__ = tuple(
     e if '-' not in e else e.split('-')[0] for part in __version__.split('+') for e in part.split('.') if e != 'parent'
 )
 
-APP_NAME = 'Pipeline (Finnish: putki) - discovering and executing a specific task description.'
-APP_ALIAS = 'putki'
-APP_ENV = 'PUTKI'
+APP_ALIAS = str(pathlib.Path(__file__).parent.name)
+APP_ENV = APP_ALIAS.upper()
+APP_NAME = locals()['__doc__']
 DEBUG = bool(os.getenv(f'{APP_ENV}_DEBUG', ''))
 VERBOSE = bool(os.getenv(f'{APP_ENV}_VERBOSE', ''))
 QUIET = False
 STRICT = bool(os.getenv(f'{APP_ENV}_STRICT', ''))
 ENCODING = 'utf-8'
 ENCODING_ERRORS_POLICY = 'ignore'
-DEFAULT_CONFIG_NAME = '.putki.json'
+DEFAULT_CONFIG_NAME = f'.{APP_ALIAS}.json'
 DEFAULT_LF_ONLY = 'YES'
 DEFAULT_STRUCTURE_NAME = 'structure.yml'
 log = logging.getLogger()  # Module level logger is sufficient
