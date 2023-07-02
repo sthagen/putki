@@ -1,8 +1,8 @@
 # Third Party Dependencies
 
 <!--[[[fill sbom_sha256()]]]-->
-The [SBOM in CycloneDX v1.4 JSON format](https://git.sr.ht/~sthagen/putki/blob/default/sbom/cdx.json) with SHA256 checksum ([ea59ff26 ...](https://git.sr.ht/~sthagen/putki/blob/default/sbom/cdx.json.sha256 "sha256:ea59ff26443d344adeae9d4725e454ddfe029f5ca578fa8c1921158dddfee25a")).
-<!--[[[end]]] (checksum: 19d1319e028c1113e5c9c37854d6cf54)-->
+The [SBOM in CycloneDX v1.4 JSON format](https://git.sr.ht/~sthagen/putki/blob/default/sbom/cdx.json) with SHA256 checksum ([649e4d71 ...](https://git.sr.ht/~sthagen/putki/blob/default/sbom/cdx.json.sha256 "sha256:649e4d716cfab1e97d09c6a2fc9e413d51f8af34e5682a60b826e94fefb945bb")).
+<!--[[[end]]] (checksum: c8c7e00971ca472634ddf1fe50e94cb6)-->
 ## Licenses 
 
 JSON files with complete license info of: [direct dependencies](direct-dependency-licenses.json) | [all dependencies](all-dependency-licenses.json)
@@ -21,9 +21,14 @@ JSON files with complete license info of: [direct dependencies](direct-dependenc
 ### Indirect Dependencies
 
 <!--[[[fill indirect_dependencies_table()]]]-->
-| Name | Version | License | Author | Description (from packaging data) |
-|:-----|:--------|:--------|:-------|:----------------------------------|
-<!--[[[end]]] (checksum: 8a87b89207db0be2864af66f9266660c)-->
+| Name                                                             | Version                                                    | License                            | Author                                                                                | Description (from packaging data)                                      |
+|:-----------------------------------------------------------------|:-----------------------------------------------------------|:-----------------------------------|:--------------------------------------------------------------------------------------|:-----------------------------------------------------------------------|
+| [click](https://palletsprojects.com/p/click/)                    | [8.1.3](https://pypi.org/project/click/8.1.3/)             | BSD License                        | Armin Ronacher                                                                        | Composable command line interface toolkit                              |
+| [gitdb](https://github.com/gitpython-developers/gitdb)           | [4.0.10](https://pypi.org/project/gitdb/4.0.10/)           | BSD License                        | Sebastian Thiel                                                                       | Git Object Database                                                    |
+| [smmap](https://github.com/gitpython-developers/smmap)           | [5.0.0](https://pypi.org/project/smmap/5.0.0/)             | BSD License                        | Sebastian Thiel                                                                       | A pure Python implementation of a sliding window memory map manager    |
+| [typing_extensions](https://github.com/python/typing_extensions) | [4.4.0](https://pypi.org/project/typing_extensions/4.4.0/) | Python Software Foundation License | "Guido van Rossum, Jukka Lehtosalo, Łukasz Langa, Michael Lee" <levkivskyi@gmail.com> | Backported and Experimental Type Hints for Python 3.7+                 |
+| [urllib3](https://urllib3.readthedocs.io/)                       | [1.26.13](https://pypi.org/project/urllib3/1.26.13/)       | MIT License                        | Andrey Petrov                                                                         | HTTP library with thread-safe connection pooling, file post, and more. |
+<!--[[[end]]] (checksum: 8858d9c75c5267cea994ffce0b56d6c9)-->
 
 ## Dependency Tree(s)
 
