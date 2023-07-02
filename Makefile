@@ -82,3 +82,4 @@ name:
 	@printf "Release '%s'\n\n" "$$(git-release-name "$$(git rev-parse HEAD)")"
 	@printf "%s revision.is(): sha1:%s\n" "-" "$$(git rev-parse HEAD)"
 	@printf "%s name.derive(): '%s'\n" "-" "$$(git-release-name "$$(git rev-parse HEAD)")"
+	@printf "%s node.id(): '%s'\n" "-" "$$(bin/gen_node_identifier.py)"
