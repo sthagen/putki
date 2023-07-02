@@ -1,0 +1,22 @@
+---
+source:
+  project: orga
+  repo: rep
+  branch: some-branch
+  folder: here
+  structure: structure.yml
+  mode:
+    poll:
+      sleep_seconds: 42 
+    trigger:
+      revision: true
+  formats:
+    html: false
+    pdf: true
+  topic: design
+  target: prod_kind
+  facets:
+    foo: true
+    bar: false
+    baz: false
+    quux: true
