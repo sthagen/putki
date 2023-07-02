@@ -3,44 +3,23 @@
   "spdxVersion" : "SPDX-2.3",
   "creationInfo" : {
     "comment" : "Converted from CycloneDX spec version 1.4",
-    "created" : "2023-06-30T04:58:49Z",
+    "created" : "2023-07-02T10:19:11Z",
     "creators" : [ "Tool: CycloneDX:cyclonedx-bom-3.11.0", "Tool: CycloneDX:cyclonedx-python-lib-3.1.1", "Tool: CycloneToSpdx-0.1.4" ],
     "licenseListVersion" : "3.21"
   },
   "name" : "From-Cyclone-DX",
   "dataLicense" : "CC0-1.0",
   "annotations" : [ {
-    "annotationDate" : "2023-06-30T04:58:51Z",
+    "annotationDate" : "2023-07-02T10:19:12Z",
     "annotationType" : "OTHER",
     "annotator" : "Tool: CycloneToSpdx",
     "comment" : "MISSING_CDX_PROPERTY:extensions={}"
   } ],
-  "documentNamespace" : "https://cyclonedx/550ce1bd-30a1-4d91-8204-6cae0b8984fc_1",
+  "documentNamespace" : "https://cyclonedx/26493b14-5a3d-4752-b7b2-ed0cc9b27c14_1",
   "packages" : [ {
-    "SPDXID" : "SPDXRef-18d347f1-07fb-423c-be3b-3d668c267f99",
+    "SPDXID" : "SPDXRef-cc61bbe5-8f53-47bc-bfc5-9f77cf21104d",
     "annotations" : [ {
-      "annotationDate" : "2023-06-30T04:58:51Z",
-      "annotationType" : "OTHER",
-      "annotator" : "Tool: CycloneToSpdx",
-      "comment" : "MISSING_CDX_PROPERTY:componentType=\"LIBRARY\""
-    } ],
-    "copyrightText" : "NOASSERTION",
-    "downloadLocation" : "NOASSERTION",
-    "externalRefs" : [ {
-      "referenceCategory" : "PACKAGE-MANAGER",
-      "referenceLocator" : "pkg:pypi/dulwich@0.21.5",
-      "referenceType" : "purl"
-    } ],
-    "filesAnalyzed" : false,
-    "licenseConcluded" : "NOASSERTION",
-    "licenseDeclared" : "NOASSERTION",
-    "name" : "dulwich",
-    "primaryPackagePurpose" : "LIBRARY",
-    "versionInfo" : "0.21.5"
-  }, {
-    "SPDXID" : "SPDXRef-0d787b6f-54de-4181-82b2-3122a86228ba",
-    "annotations" : [ {
-      "annotationDate" : "2023-06-30T04:58:51Z",
+      "annotationDate" : "2023-07-02T10:19:12Z",
       "annotationType" : "OTHER",
       "annotator" : "Tool: CycloneToSpdx",
       "comment" : "MISSING_CDX_PROPERTY:componentType=\"LIBRARY\""
@@ -59,9 +38,30 @@
     "primaryPackagePurpose" : "LIBRARY",
     "versionInfo" : "0.9.0"
   }, {
-    "SPDXID" : "SPDXRef-8263d552-db96-4ba7-b48c-2f69b6f436a8",
+    "SPDXID" : "SPDXRef-29c16770-86a6-466a-b643-a2e5d888a1ae",
     "annotations" : [ {
-      "annotationDate" : "2023-06-30T04:58:51Z",
+      "annotationDate" : "2023-07-02T10:19:12Z",
+      "annotationType" : "OTHER",
+      "annotator" : "Tool: CycloneToSpdx",
+      "comment" : "MISSING_CDX_PROPERTY:componentType=\"LIBRARY\""
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "downloadLocation" : "NOASSERTION",
+    "externalRefs" : [ {
+      "referenceCategory" : "PACKAGE-MANAGER",
+      "referenceLocator" : "pkg:pypi/pyyaml@6.0",
+      "referenceType" : "purl"
+    } ],
+    "filesAnalyzed" : false,
+    "licenseConcluded" : "NOASSERTION",
+    "licenseDeclared" : "NOASSERTION",
+    "name" : "PyYAML",
+    "primaryPackagePurpose" : "LIBRARY",
+    "versionInfo" : "6.0"
+  }, {
+    "SPDXID" : "SPDXRef-07aef7f7-1342-4f99-ab9c-3a4194c2a5ac",
+    "annotations" : [ {
+      "annotationDate" : "2023-07-02T10:19:12Z",
       "annotationType" : "OTHER",
       "annotator" : "Tool: CycloneToSpdx",
       "comment" : "MISSING_CDX_PROPERTY:componentType=\"LIBRARY\""
@@ -80,9 +80,9 @@
     "primaryPackagePurpose" : "LIBRARY",
     "versionInfo" : "3.1.31"
   }, {
-    "SPDXID" : "SPDXRef-04c58d6e-c0ae-432d-b00f-14508cd0f07c",
+    "SPDXID" : "SPDXRef-61482853-533d-4fda-a3df-5dc21b286783",
     "annotations" : [ {
-      "annotationDate" : "2023-06-30T04:58:51Z",
+      "annotationDate" : "2023-07-02T10:19:12Z",
       "annotationType" : "OTHER",
       "annotator" : "Tool: CycloneToSpdx",
       "comment" : "MISSING_CDX_PROPERTY:componentType=\"LIBRARY\""
@@ -91,31 +91,31 @@
     "downloadLocation" : "NOASSERTION",
     "externalRefs" : [ {
       "referenceCategory" : "PACKAGE-MANAGER",
-      "referenceLocator" : "pkg:pypi/pyyaml@6.0",
+      "referenceLocator" : "pkg:pypi/dulwich@0.21.5",
       "referenceType" : "purl"
     } ],
     "filesAnalyzed" : false,
     "licenseConcluded" : "NOASSERTION",
     "licenseDeclared" : "NOASSERTION",
-    "name" : "PyYAML",
+    "name" : "dulwich",
     "primaryPackagePurpose" : "LIBRARY",
-    "versionInfo" : "6.0"
+    "versionInfo" : "0.21.5"
   } ],
   "relationships" : [ {
     "spdxElementId" : "SPDXRef-DOCUMENT",
     "relationshipType" : "DESCRIBES",
-    "relatedSpdxElement" : "SPDXRef-04c58d6e-c0ae-432d-b00f-14508cd0f07c"
+    "relatedSpdxElement" : "SPDXRef-29c16770-86a6-466a-b643-a2e5d888a1ae"
   }, {
     "spdxElementId" : "SPDXRef-DOCUMENT",
     "relationshipType" : "DESCRIBES",
-    "relatedSpdxElement" : "SPDXRef-8263d552-db96-4ba7-b48c-2f69b6f436a8"
+    "relatedSpdxElement" : "SPDXRef-07aef7f7-1342-4f99-ab9c-3a4194c2a5ac"
   }, {
     "spdxElementId" : "SPDXRef-DOCUMENT",
     "relationshipType" : "DESCRIBES",
-    "relatedSpdxElement" : "SPDXRef-0d787b6f-54de-4181-82b2-3122a86228ba"
+    "relatedSpdxElement" : "SPDXRef-cc61bbe5-8f53-47bc-bfc5-9f77cf21104d"
   }, {
     "spdxElementId" : "SPDXRef-DOCUMENT",
     "relationshipType" : "DESCRIBES",
-    "relatedSpdxElement" : "SPDXRef-18d347f1-07fb-423c-be3b-3d668c267f99"
+    "relatedSpdxElement" : "SPDXRef-61482853-533d-4fda-a3df-5dc21b286783"
   } ]
 }
