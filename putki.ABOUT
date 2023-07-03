@@ -1,0 +1,14 @@
+name: putki
+description: Pipeline (Finnish: putki) - discovering and executing a specific task description.
+license_spdx: MIT
+version: 2023.6.30
+spec_version: 1.0
+home_url: https://git.sr.ht/~sthagen/putki
+news_url: https://libraries.io/pypi/putki/versions.atom
+date: 2023-06-30
+about_resource: ./
+libraries_io_url: https://libraries.io/pypi/putki?number=2023.6.30
+vcs_tool: git
+vcs_repository: https://git.sr.ht/~sthagen/putki
+vcs_branch: default
+
