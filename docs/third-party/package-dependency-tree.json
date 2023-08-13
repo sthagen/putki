@@ -8,7 +8,7 @@
             {
                 "key": "urllib3",
                 "package_name": "urllib3",
-                "installed_version": "1.26.13",
+                "installed_version": "2.0.4",
                 "required_version": ">=1.25",
                 "dependencies": []
             }
@@ -17,8 +17,8 @@
     {
         "key": "gitpython",
         "package_name": "GitPython",
-        "installed_version": "3.1.31",
-        "required_version": "3.1.31",
+        "installed_version": "3.1.32",
+        "required_version": "3.1.32",
         "dependencies": [
             {
                 "key": "gitdb",
@@ -40,8 +40,8 @@
     {
         "key": "pyyaml",
         "package_name": "PyYAML",
-        "installed_version": "6.0",
-        "required_version": "6.0",
+        "installed_version": "6.0.1",
+        "required_version": "6.0.1",
         "dependencies": []
     },
     {
@@ -53,14 +53,14 @@
             {
                 "key": "click",
                 "package_name": "click",
-                "installed_version": "8.1.3",
+                "installed_version": "8.1.6",
                 "required_version": ">=7.1.1,<9.0.0",
                 "dependencies": []
             },
             {
                 "key": "typing-extensions",
                 "package_name": "typing-extensions",
-                "installed_version": "4.4.0",
+                "installed_version": "4.7.1",
                 "required_version": ">=3.7.4.3",
                 "dependencies": []
             }
