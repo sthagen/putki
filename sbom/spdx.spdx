@@ -1,0 +1,98 @@
+SPDXVersion: SPDX-2.3
+DataLicense: CC0-1.0
+DocumentNamespace: https://cyclonedx/bd573176-2a4a-4338-91c0-a5cc654b99e3_1
+DocumentName: From-Cyclone-DX
+SPDXID: SPDXRef-DOCUMENT
+
+## Creation Information
+Creator: Tool: CycloneDX:cyclonedx-bom-3.11.2
+Creator: Tool: CycloneDX:cyclonedx-python-lib-3.1.5
+Creator: Tool: CycloneToSpdx-0.1.4
+Created: 2023-08-22T18:52:31Z
+CreatorComment: <text>Converted from CycloneDX spec version 1.4</text>
+LicenseListVersion: 3.21
+## Annotations
+Annotator: Tool: CycloneToSpdx
+AnnotationDate: 2023-08-22T18:52:34Z
+AnnotationComment: <text>MISSING_CDX_PROPERTY:extensions={}</text>
+AnnotationType: OTHER
+SPDXREF: SPDXRef-DOCUMENT
+## Relationships
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-0f0210fd-3ee8-4a0f-8b57-992f84c8b4b5
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-8bf0dde6-8be0-4cf4-afd7-7903a332d488
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-9627eb62-8f81-4533-90d6-940389136acf
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-f752ee5d-19d4-4430-9c97-7951695bf289
+
+## Package Information
+PackageName: GitPython
+SPDXID: SPDXRef-f752ee5d-19d4-4430-9c97-7951695bf289
+PackageVersion: 3.1.32
+PackageDownloadLocation: NOASSERTION
+PrimaryPackagePurpose: LIBRARY
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/gitpython@3.1.32
+## Annotations
+Annotator: Tool: CycloneToSpdx
+AnnotationDate: 2023-08-22T18:52:34Z
+AnnotationComment: <text>MISSING_CDX_PROPERTY:componentType="LIBRARY"</text>
+AnnotationType: OTHER
+SPDXREF: SPDXRef-f752ee5d-19d4-4430-9c97-7951695bf289
+FilesAnalyzed: false
+
+## Package Information
+PackageName: PyYAML
+SPDXID: SPDXRef-0f0210fd-3ee8-4a0f-8b57-992f84c8b4b5
+PackageVersion: 6.0.1
+PackageDownloadLocation: NOASSERTION
+PrimaryPackagePurpose: LIBRARY
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/pyyaml@6.0.1
+## Annotations
+Annotator: Tool: CycloneToSpdx
+AnnotationDate: 2023-08-22T18:52:34Z
+AnnotationComment: <text>MISSING_CDX_PROPERTY:componentType="LIBRARY"</text>
+AnnotationType: OTHER
+SPDXREF: SPDXRef-0f0210fd-3ee8-4a0f-8b57-992f84c8b4b5
+FilesAnalyzed: false
+
+## Package Information
+PackageName: dulwich
+SPDXID: SPDXRef-9627eb62-8f81-4533-90d6-940389136acf
+PackageVersion: 0.21.5
+PackageDownloadLocation: NOASSERTION
+PrimaryPackagePurpose: LIBRARY
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/dulwich@0.21.5
+## Annotations
+Annotator: Tool: CycloneToSpdx
+AnnotationDate: 2023-08-22T18:52:34Z
+AnnotationComment: <text>MISSING_CDX_PROPERTY:componentType="LIBRARY"</text>
+AnnotationType: OTHER
+SPDXREF: SPDXRef-9627eb62-8f81-4533-90d6-940389136acf
+FilesAnalyzed: false
+
+## Package Information
+PackageName: typer
+SPDXID: SPDXRef-8bf0dde6-8be0-4cf4-afd7-7903a332d488
+PackageVersion: 0.9.0
+PackageDownloadLocation: NOASSERTION
+PrimaryPackagePurpose: LIBRARY
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/typer@0.9.0
+## Annotations
+Annotator: Tool: CycloneToSpdx
+AnnotationDate: 2023-08-22T18:52:34Z
+AnnotationComment: <text>MISSING_CDX_PROPERTY:componentType="LIBRARY"</text>
+AnnotationType: OTHER
+SPDXREF: SPDXRef-8bf0dde6-8be0-4cf4-afd7-7903a332d488
+FilesAnalyzed: false
+
+
