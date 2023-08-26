@@ -7,7 +7,7 @@ Pipeline (Finnish: putki) - discovering and executing a specific task descriptio
 Third party dependencies are documented in the folder [third-party](docs/third-party/README.md).
 
 [![version](https://img.shields.io/pypi/v/putki.svg?style=flat)](https://pypi.python.org/pypi/putki/)
-[![downloads](https://pepy.tech/badge/putki/month)](https://pepy.tech/project/putki)
+[![downloads](https://static.pepy.tech/badge/putki/month)](https://pepy.tech/project/putki)
 [![wheel](https://img.shields.io/pypi/wheel/putki.svg?style=flat)](https://pypi.python.org/pypi/putki/)
 [![supported-versions](https://img.shields.io/pypi/pyversions/putki.svg?style=flat)](https://pypi.python.org/pypi/putki/)
 [![supported-implementations](https://img.shields.io/pypi/implementation/putki.svg?style=flat)](https://pypi.python.org/pypi/putki/)
