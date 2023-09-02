@@ -2,7 +2,7 @@ digraph {
 	"typing-extensions" [label="typing-extensions\n4.7.1"]
 	click [label="click\n8.1.6"]
 	dulwich -> urllib3 [label=">=1.25"]
-	dulwich [label="dulwich\n0.21.5"]
+	dulwich [label="dulwich\n0.21.6"]
 	gitdb -> smmap [label=">=3.0.1,<6"]
 	gitdb [label="gitdb\n4.0.10"]
 	gitpython -> gitdb [label=">=4.0.1,<5"]

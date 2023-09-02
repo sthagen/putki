@@ -1,8 +1,8 @@
 # Third Party Dependencies
 
 <!--[[[fill sbom_sha256()]]]-->
-The [SBOM in CycloneDX v1.4 JSON format](https://git.sr.ht/~sthagen/putki/blob/default/etc/sbom/cdx.json) with SHA256 checksum ([52f1c495 ...](https://git.sr.ht/~sthagen/putki/blob/default/etc/sbom/cdx.json.sha256 "sha256:52f1c4958b27c19b6da41ae2a15cddbf5b6874566a38b11eb89c3ff6ce24611e")).
-<!--[[[end]]] (checksum: 6faa1d24483e7e934239f29443d37f78)-->
+The [SBOM in CycloneDX v1.4 JSON format](https://git.sr.ht/~sthagen/putki/blob/default/etc/sbom/cdx.json) with SHA256 checksum ([f8931003 ...](https://git.sr.ht/~sthagen/putki/blob/default/etc/sbom/cdx.json.sha256 "sha256:f89310039cb8fe320e1282dd64e7eb98941903541d7e48062557c8dddf38e29c")).
+<!--[[[end]]] (checksum: 48917d6eb0ad6413d600d5b6e16a3a95)-->
 ## Licenses 
 
 JSON files with complete license info of: [direct dependencies](direct-dependency-licenses.json) | [all dependencies](all-dependency-licenses.json)
@@ -14,9 +14,9 @@ JSON files with complete license info of: [direct dependencies](direct-dependenc
 |:---------------------------------------------------------------|:-----------------------------------------------------|:------------------------|:-----------------------------------|:---------------------------------------------------------------------|
 | [GitPython](https://github.com/gitpython-developers/GitPython) | [3.1.34](https://pypi.org/project/GitPython/3.1.34/) | BSD License             | Sebastian Thiel, Michael Trier     | GitPython is a Python library used to interact with Git repositories |
 | [PyYAML](https://pyyaml.org/)                                  | [6.0.1](https://pypi.org/project/PyYAML/6.0.1/)      | MIT License             | Kirill Simonov                     | YAML parser and emitter for Python                                   |
-| [dulwich](https://www.dulwich.io/)                             | [0.21.5](https://pypi.org/project/dulwich/0.21.5/)   | Apache Software License | Jelmer Vernooij <jelmer@jelmer.uk> | Python Git Library                                                   |
+| [dulwich](https://www.dulwich.io/)                             | [0.21.6](https://pypi.org/project/dulwich/0.21.6/)   | Apache Software License | Jelmer Vernooij <jelmer@jelmer.uk> | Python Git Library                                                   |
 | [typer](https://github.com/tiangolo/typer)                     | [0.9.0](https://pypi.org/project/typer/0.9.0/)       | MIT License             | Sebastián Ramírez                  | Typer, build great CLIs. Easy to code. Based on Python type hints.   |
-<!--[[[end]]] (checksum: 14ead97cf6d17e826802e976ded509d6)-->
+<!--[[[end]]] (checksum: b23f7872a7d651f663f4dbdf96743fb5)-->
 
 ### Indirect Dependencies
 
@@ -44,7 +44,7 @@ Base graphviz file in dot format: [Trees of the direct dependencies](package-dep
 
 <!--[[[fill dependency_tree_console_text()]]]-->
 ````console
-dulwich==0.21.5
+dulwich==0.21.6
 └── urllib3 [required: >=1.25, installed: 2.0.4]
 GitPython==3.1.34
 └── gitdb [required: >=4.0.1,<5, installed: 4.0.10]
@@ -54,4 +54,4 @@ typer==0.9.0
 ├── click [required: >=7.1.1,<9.0.0, installed: 8.1.6]
 └── typing-extensions [required: >=3.7.4.3, installed: 4.7.1]
 ````
-<!--[[[end]]] (checksum: a7236ecf4f056bde6731d52b47cd2ef1)-->
+<!--[[[end]]] (checksum: e4c9d29e85e4f8779fc19f87f7d34269)-->
