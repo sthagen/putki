@@ -1,8 +1,8 @@
 # Third Party Dependencies
 
 <!--[[[fill sbom_sha256()]]]-->
-The [SBOM in CycloneDX v1.4 JSON format](https://git.sr.ht/~sthagen/putki/blob/default/etc/sbom/cdx.json) with SHA256 checksum ([617fc597 ...](https://git.sr.ht/~sthagen/putki/blob/default/etc/sbom/cdx.json.sha256 "sha256:617fc59704426afcfb77751f35a76691eec8397b02e7d998bd6eba9377899f62")).
-<!--[[[end]]] (checksum: 5035f8c37536c87029dfe41cc288549d)-->
+The [SBOM in CycloneDX v1.4 JSON format](https://git.sr.ht/~sthagen/putki/blob/default/etc/sbom/cdx.json) with SHA256 checksum ([61c1c76c ...](https://git.sr.ht/~sthagen/putki/blob/default/etc/sbom/cdx.json.sha256 "sha256:61c1c76c14440c0764ecf002bf778e46f70738e814982efdfa672ff13131fffb")).
+<!--[[[end]]] (checksum: 4aeac84468da4e9fd38620717a768b50)-->
 ## Licenses 
 
 JSON files with complete license info of: [direct dependencies](direct-dependency-licenses.json) | [all dependencies](all-dependency-licenses.json)
@@ -23,12 +23,12 @@ JSON files with complete license info of: [direct dependencies](direct-dependenc
 <!--[[[fill indirect_dependencies_table()]]]-->
 | Name                                                                | Version                                                    | License                            | Author                                                                                | Description (from packaging data)                                      |
 |:--------------------------------------------------------------------|:-----------------------------------------------------------|:-----------------------------------|:--------------------------------------------------------------------------------------|:-----------------------------------------------------------------------|
-| [click](https://palletsprojects.com/p/click/)                       | [8.1.6](https://pypi.org/project/click/8.1.6/)             | BSD License                        | UNKNOWN                                                                               | Composable command line interface toolkit                              |
+| [click](https://palletsprojects.com/p/click/)                       | [8.1.6](https://pypi.org/project/click/8.1.6/)             | BSD License                        | Pallets <contact@palletsprojects.com>                                                 | Composable command line interface toolkit                              |
 | [gitdb](https://github.com/gitpython-developers/gitdb)              | [4.0.10](https://pypi.org/project/gitdb/4.0.10/)           | BSD License                        | Sebastian Thiel                                                                       | Git Object Database                                                    |
 | [smmap](https://github.com/gitpython-developers/smmap)              | [5.0.0](https://pypi.org/project/smmap/5.0.0/)             | BSD License                        | Sebastian Thiel                                                                       | A pure Python implementation of a sliding window memory map manager    |
 | [typing_extensions](https://github.com/python/typing_extensions)    | [4.7.1](https://pypi.org/project/typing_extensions/4.7.1/) | Python Software Foundation License | "Guido van Rossum, Jukka Lehtosalo, Łukasz Langa, Michael Lee" <levkivskyi@gmail.com> | Backported and Experimental Type Hints for Python 3.7+                 |
 | [urllib3](https://github.com/urllib3/urllib3/blob/main/CHANGES.rst) | [2.0.4](https://pypi.org/project/urllib3/2.0.4/)           | MIT License                        | Andrey Petrov <andrey.petrov@shazow.net>                                              | HTTP library with thread-safe connection pooling, file post, and more. |
-<!--[[[end]]] (checksum: 9930fd2c09995c9a59d48b66ad984607)-->
+<!--[[[end]]] (checksum: 381cec95e530a2f6e6f21214c09ff04e)-->
 
 ## Dependency Tree(s)
 
