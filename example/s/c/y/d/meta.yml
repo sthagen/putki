@@ -1,0 +1,6 @@
+---
+document:
+  import: ../../../meta-base.yml
+  patch:
+    title: Y D
+    header_id: y-d
