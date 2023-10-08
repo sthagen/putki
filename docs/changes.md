@@ -1,5 +1,8 @@
 # Changes
 
+2023.10.8
+:    * Changed API to verify tasks and structures
+
 2023.6.30
 :    * Added dulwich git backend library to prepare backend choices during runtime
 
