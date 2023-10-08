@@ -102,8 +102,8 @@ Given a location that does not contain tasks files:
 
 ```console
 ❯ putki tasks -d putki --verbose
-2023-10-08T19:27:17.855331+00:00 DEBUG [git.cmd]: Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/Users/ruth/d/gh/sha/src/putki, universal_newlines=False, shell=None, istream=None)
-2023-10-08T19:27:17.865118+00:00 INFO [PUTKI]: Identified tasks default root at /Users/ruth/d/gh/sha/src/putki/example/basic/tasks
+2023-10-08T19:27:17.855331+00:00 DEBUG [git.cmd]: Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/some/where/putki, universal_newlines=False, shell=None, istream=None)
+2023-10-08T19:27:17.865118+00:00 INFO [PUTKI]: Identified tasks default root at /some/where/putki/example/basic/tasks
 2023-10-08T19:27:17.865504+00:00 ERROR [PUTKI]: No tasks files found
 ```
 
@@ -111,8 +111,8 @@ Given a location that does indeed contain tasks files:
 
 ```console
 ❯ python -m putki tasks -d example/minimal-tree/tasks/wun --verbose 2>&1 | cut -c 34-
-DEBUG [git.cmd]: Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/Users/ruth/d/gh/sha/src/putki, universal_newlines=False, shell=None, istream=None)
-INFO [PUTKI]: Identified tasks default root at /Users/ruth/d/gh/sha/src/putki/example/basic/tasks
+DEBUG [git.cmd]: Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/some/where/putki, universal_newlines=False, shell=None, istream=None)
+INFO [PUTKI]: Identified tasks default root at /some/where/putki/example/basic/tasks
 INFO [PUTKI]: Mapped tasks below specified root at example/minimal-tree/tasks/wun
 INFO [PUTKI]: The 1 tasks files collected below specified root at example/minimal-tree/tasks/wun are:
 INFO [PUTKI]: - example/minimal-tree/tasks/wun
