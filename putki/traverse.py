@@ -22,9 +22,15 @@ def is_yaml(path: Path) -> bool:
     return pathlib.Path(path).suffix.lower() in ('.yaml', '.yml')
 
 
-def walk_binder(binder_path: pathlib.Path) -> dict[Path, bool]:
+def walk_binder(binder_path: Path) -> dict[Path, bool]:
     """Visit all entries of the binder assuming the paths lead to files."""
-    binder = [binder_path.parent / x.strip() for x in binder_path.open('rt', encoding=ENCODING).readlines()]
+    binder_path = pathlib.Path(binder_path)
+    try:
+        with binder_path.open('rt', encoding=ENCODING) as handle:
+            binder = [binder_path.parent / x.strip() for x in handle.readlines()]
+    except FileNotFoundError:  # noqa
+        log.error(f'missing {binder_path} binder file')
+        return {}
     v_map: dict[Path, bool] = {source: source.is_file() for source in binder}
     for k, v in v_map.items():
         if not v:
@@ -45,16 +51,16 @@ def load_yaml(path: Path) -> Union[Any, dict[str, Any]]:
         return {}
 
 
-def meta_follow_include(path: pathlib.Path, data: dict[str, dict[str, Any]]) -> bool:
+def meta_follow_include(path: Path, data: dict[str, dict[str, Any]]) -> bool:
     """Visit any import assuming the path leads to a file."""
     include = data['document'].get('import', '')
     if include:
-        incl_path = path.parent / include
+        incl_path = pathlib.Path(path).parent / include
         return bool(load_yaml(incl_path))
     return True
 
 
-def validate_facet(facet: dict[str, Any], ssp: pathlib.Path) -> None:
+def validate_facet(facet: dict[str, Any], ssp: Path) -> None:
     """Validate the surface of a facet."""
     for facet_code, data in facet.items():
         log.info(f'    * {facet_code}:')
@@ -63,7 +69,7 @@ def validate_facet(facet: dict[str, Any], ssp: pathlib.Path) -> None:
             v = data[k]
             log.info(f'      {k :9s} -> {v}')
             if is_path(v):
-                pl_try = ssp.parent / v
+                pl_try = pathlib.Path(ssp).parent / v
                 path_likes[k] = pl_try
                 d = load_yaml(pl_try)
                 if k == 'bind':
@@ -72,7 +78,7 @@ def validate_facet(facet: dict[str, Any], ssp: pathlib.Path) -> None:
                     _ = meta_follow_include(pl_try, d)
 
 
-def follow(structures_path: Union[str, pathlib.Path]) -> tuple[int, str, pathlib.Path, dict[str, Any]]:
+def follow(structures_path: Path) -> tuple[int, str, pathlib.Path, dict[str, Any]]:
     """Execute the traversal."""
     sp = pathlib.Path(structures_path)
     root_path = sp.parent
@@ -80,7 +86,7 @@ def follow(structures_path: Union[str, pathlib.Path]) -> tuple[int, str, pathlib
     log.info(f'Structures from {STRUCTURES}(root):')
     s_info = load_yaml(sp)
     if not s_info:
-        return 0, '', root_path, {}
+        return 1, 'no structures found', root_path, {}
 
     claims = s_info['structures']
     for part, sub_path in claims.items():
@@ -92,10 +98,9 @@ def follow(structures_path: Union[str, pathlib.Path]) -> tuple[int, str, pathlib
             log.info(f'  + {perspective}:')
             ssp = sub_p.parent / structure_path_str
             structure_info = load_yaml(ssp)
-            if not structure_info:
-                continue
-            for facet in structure_info[target]:
-                validate_facet(facet, ssp)
+            if structure_info:
+              for facet in structure_info[target]:
+                  validate_facet(facet, ssp)
     return 0, '', root_path, claims
 
 

@@ -6,7 +6,7 @@ import sys
 import typer
 
 import putki.api as api
-from putki import APP_NAME, DEFAULT_STRUCTURE_NAME, QUIET, __version__ as APP_VERSION, log
+from putki import APP_NAME, DEFAULT_STRUCTURE_NAME, DEFAULT_STRUCTURES_NAME, QUIET, __version__ as APP_VERSION, log
 
 app = typer.Typer(
     add_completion=False,
@@ -20,41 +20,61 @@ DocumentRoot = typer.Option(
     '--document-root',
     help='Root of the document tree to visit. Optional\n(default: positional tree root value)',
 )
+
 StructureName = typer.Option(
     DEFAULT_STRUCTURE_NAME,
     '-s',
     '--structure',
     help='structure mapping file (default: {DEFAULT_STRUCTURE_NAME})',
 )
+
 TargetName = typer.Option(
     '',
     '-t',
     '--target',
     help='target document key',
 )
+
 FacetName = typer.Option(
     '',
     '-f',
     '--facet',
     help='facet key of target document',
 )
+
 Verbosity = typer.Option(
     False,
     '-v',
     '--verbose',
     help='Verbose output (default is False)',
 )
+
 Strictness = typer.Option(
     False,
     '-s',
     '--strict',
     help='Ouput noisy warnings on console (default is False)',
 )
+
 OutputPath = typer.Option(
     '',
     '-o',
     '--output-path',
     help='Path to output unambiguous content to - like when ejecting a template',
+)
+
+StructuresName = typer.Option(
+    DEFAULT_STRUCTURES_NAME,
+    # '',
+    '--structures',
+    help='structures mapping file (default: {DEFAULT_STRUCTURES_NAME})',
+)
+
+ComponentFolderName = typer.Option(  # TODO: prepare later for additional intermediates
+    'component',
+    # '',
+    '--component-folder-name',
+    help='component folder name (default: component)',
 )
 
 
@@ -106,8 +126,8 @@ def _verify_call_vector(
     return 0, '', doc, options
 
 
-@app.command('verify')
-def verify(  # noqa
+@app.command('tasks')
+def verify_tasks(  # noqa
     doc_root_pos: str = typer.Argument(''),
     doc_root: str = DocumentRoot,
     structure: str = StructureName,
@@ -125,7 +145,29 @@ def verify(  # noqa
         return code
 
     return sys.exit(
-        api.verify(doc_root=doc, structure_name=structure, target_key=target, facet_key=facet, options=options)
+        api.verify_tasks(doc_root=doc, structure_name=structure, target_key=target, facet_key=facet, options=options)
+    )
+
+
+@app.command('structures')
+def verify_structures(  # noqa
+    doc_root_pos: str = typer.Argument(''),
+    doc_root: str = DocumentRoot,
+    structures: str = StructuresName,
+    component: str = ComponentFolderName,
+    verbose: bool = Verbosity,
+    strict: bool = Strictness,
+) -> int:
+    """
+    Verify the structure definition against the file system.
+    """
+    code, message, doc, options = _verify_call_vector(doc_root, doc_root_pos, verbose, strict)
+    if code:
+        log.error(message)
+        return code
+
+    return sys.exit(
+        api.verify_structures(doc_root=doc, structures_name=structures, component=component, options=options)
     )
 
 

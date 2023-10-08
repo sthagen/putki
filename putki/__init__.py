@@ -24,6 +24,7 @@ ENCODING_ERRORS_POLICY = 'ignore'
 DEFAULT_CONFIG_NAME = f'.{APP_ALIAS}.json'
 DEFAULT_LF_ONLY = 'YES'
 DEFAULT_STRUCTURE_NAME = 'structure.yml'
+DEFAULT_STRUCTURES_NAME = 'structures.yml'
 log = logging.getLogger()  # Module level logger is sufficient
 LOG_FOLDER = pathlib.Path('logs')
 LOG_FILE = f'{APP_ALIAS}.log'
@@ -40,6 +41,7 @@ __all__: List[str] = [
     'DEBUG',
     'DEFAULT_CONFIG_NAME',
     'DEFAULT_STRUCTURE_NAME',
+    'DEFAULT_STRUCTURES_NAME',
     'ENCODING',
     'log',
 ]

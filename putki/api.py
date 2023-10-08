@@ -1,12 +1,15 @@
+import os
+import pathlib
 from typing import no_type_check
 
 import yaml
 import putki.discover as discover
+import putki.traverse as traverse
 from putki import log
 
 
 @no_type_check
-def verify(doc_root, structure_name, target_key, facet_key, options) -> int:
+def verify_tasks(doc_root, structure_name, target_key, facet_key, options) -> int:
     """Yes."""
     tasks_root = discover.root()
     log.info(f'Identified tasks default root at {tasks_root}')
@@ -26,4 +29,17 @@ def verify(doc_root, structure_name, target_key, facet_key, options) -> int:
     for path in show_me.split('\n'):
         log.info(path)
     log.info('OK')
+    return 0
+
+
+@no_type_check
+def verify_structures(doc_root, structures_name, component, options) -> int:
+    """Maybe later."""
+    traverse.ROI = component
+    saved_path = pathlib.Path.cwd()
+    os.chdir(doc_root)
+    log.info(f'Verifying structures below {doc_root}')
+    code, message, root, claims = traverse.follow(structures_name)
+    traverse.walk_fs(claims, root)
+    os.chdir(saved_path)
     return 0
