@@ -39,3 +39,8 @@ def test_follow_example_s():
     assert message == ''
     assert root
     assert claims
+
+
+def test_walk_fs_example_s_missing_components():
+    traverse.ROI = 'c'
+    assert traverse.walk_fs({}, 'example/s/') == 1

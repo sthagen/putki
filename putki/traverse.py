@@ -99,8 +99,9 @@ def follow(structures_path: Union[str, pathlib.Path]) -> tuple[int, str, pathlib
     return 0, '', root_path, claims
 
 
-def walk_fs(claims: dict[str, Any], root_path: pathlib.Path) -> int:
+def walk_fs(claims: dict[str, Any], root_path: Path) -> int:
     """Yes."""
+    root_path = pathlib.Path(root_path)
     roi_path = root_path / ROI
     cp_declared = [claim for claim in claims]
     component_paths = [p for p in sorted(roi_path.iterdir()) if p.is_dir()]
