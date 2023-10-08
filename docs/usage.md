@@ -11,33 +11,108 @@ Simple specialized pipeline library - probably not useful to many.
 
  Pipeline (Finnish: putki) - discovering and executing a specific task description.
 
-╭─ Options ───────────────────────────────────────────────────────────────────────────────────╮
-│ --version  -V        Display the application version and exit                               │
-│ --help     -h        Show this message and exit.                                            │
-╰─────────────────────────────────────────────────────────────────────────────────────────────╯
-╭─ Commands ──────────────────────────────────────────────────────────────────────────────────╮
-│ verify       Verify the structure definition against the file system.                       │
-│ version      Display the application version and exit.                                      │
-╰─────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Options ───────────────────────────────────────────────────────────────────────────────────────╮
+│ --version  -V        Display the application version and exit                                   │
+│ --help     -h        Show this message and exit.                                                │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Commands ──────────────────────────────────────────────────────────────────────────────────────╮
+│ structures       Verify the structure definition against the file system.                       │
+│ tasks            Verify the structure definition against the file system.                       │
+│ version          Display the application version and exit.                                      │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────╯
 ```
 
-## Verify
+## Structures
+
+Given a location that does contain structures pointing to structures pointing to structure files with complete existing artifacts:
+
+```console
+❯ python -m putki structures -d example/s --component-folder-name c --verbose 2>&1 | cut -c 34-
+INFO [PUTKI]: Verifying structures below example/s
+INFO [PUTKI]: Structures from structures.yml(root):
+INFO [PUTKI]: - x:
+INFO [PUTKI]:   + d:
+INFO [PUTKI]:     * f:
+INFO [PUTKI]:       approvals -> approvals.yml
+INFO [PUTKI]:       bind      -> bind.txt
+INFO [PUTKI]:       changes   -> changes.yml
+INFO [PUTKI]:       meta      -> meta.yml
+INFO [PUTKI]:       render    -> True
+INFO [PUTKI]:   + r:
+INFO [PUTKI]:     * f:
+INFO [PUTKI]:       approvals -> approvals.yml
+INFO [PUTKI]:       bind      -> bind.txt
+INFO [PUTKI]:       changes   -> changes.yml
+INFO [PUTKI]:       meta      -> meta.yml
+INFO [PUTKI]:       render    -> True
+INFO [PUTKI]: - y:
+INFO [PUTKI]:   + d:
+INFO [PUTKI]:     * f:
+INFO [PUTKI]:       approvals -> approvals.yml
+INFO [PUTKI]:       bind      -> bind.txt
+INFO [PUTKI]:       changes   -> changes.yml
+INFO [PUTKI]:       meta      -> meta.yml
+INFO [PUTKI]:       render    -> True
+INFO [PUTKI]:   + r:
+INFO [PUTKI]:     * f:
+INFO [PUTKI]:       approvals -> approvals.yml
+INFO [PUTKI]:       bind      -> bind.txt
+INFO [PUTKI]:       changes   -> changes.yml
+INFO [PUTKI]:       meta      -> meta.yml
+INFO [PUTKI]:       render    -> True
+INFO [PUTKI]: Components (from folders):
+INFO [PUTKI]: - x
+INFO [PUTKI]: - y
+INFO [PUTKI]: Verifying any component structures not declared in root level structures.yml
+INFO [PUTKI]: OK - no missing declarations
+```
+
+### Structures - Help
+
+(WIP)
+
+```console
+❯ putki structures --help
+
+ Usage: putki structures [OPTIONS] [DOC_ROOT_POS]
+
+ Verify the structure definition against the file system.
+
+╭─ Arguments ─────────────────────────────────────────────────────────────────────────────────────╮
+│   doc_root_pos      [DOC_ROOT_POS]                                                              │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Options ───────────────────────────────────────────────────────────────────────────────────────╮
+│ --document-root          -d      TEXT  Root of the document tree to visit. Optional (default:   │
+│                                        positional tree root value)                              │
+│ --structures                     TEXT  structures mapping file (default:                        │
+│                                        {DEFAULT_STRUCTURES_NAME})                               │
+│                                        [default: structures.yml]                                │
+│ --component-folder-name          TEXT  component folder name (default: component)               │
+│                                        [default: component]                                     │
+│ --verbose                -v            Verbose output (default is False)                        │
+│ --strict                 -s            Ouput noisy warnings on console (default is False)       │
+│ --help                   -h            Show this message and exit.                              │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────╯
+```
+
+
+## Tasks
 
 Given a location that does not contain tasks files:
 
 ```console
-❯ putki verify -d putki --verbose
-2023-03-19T21:53:51.707890+00:00 DEBUG [git.cmd]: Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/some/where, universal_newlines=False, shell=None, istream=None)
-2023-03-19T21:53:51.719358+00:00 INFO [PUTKI]: Identified tasks default root at /some/where/example/basic/tasks
-2023-03-19T21:53:51.719850+00:00 ERROR [PUTKI]: No tasks files found
+❯ putki tasks -d putki --verbose
+2023-10-08T19:27:17.855331+00:00 DEBUG [git.cmd]: Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/Users/ruth/d/gh/sha/src/putki, universal_newlines=False, shell=None, istream=None)
+2023-10-08T19:27:17.865118+00:00 INFO [PUTKI]: Identified tasks default root at /Users/ruth/d/gh/sha/src/putki/example/basic/tasks
+2023-10-08T19:27:17.865504+00:00 ERROR [PUTKI]: No tasks files found
 ```
 
 Given a location that does indeed contain tasks files:
 
 ```console
-❯ python -m putki verify -d example/minimal-tree/tasks/wun --verbose 2>&1 | cut -c 34-
-DEBUG [git.cmd]: Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/some/where, universal_newlines=False, shell=None, istream=None)
-INFO [PUTKI]: Identified tasks default root at /some/where/example/basic/tasks
+❯ python -m putki tasks -d example/minimal-tree/tasks/wun --verbose 2>&1 | cut -c 34-
+DEBUG [git.cmd]: Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/Users/ruth/d/gh/sha/src/putki, universal_newlines=False, shell=None, istream=None)
+INFO [PUTKI]: Identified tasks default root at /Users/ruth/d/gh/sha/src/putki/example/basic/tasks
 INFO [PUTKI]: Mapped tasks below specified root at example/minimal-tree/tasks/wun
 INFO [PUTKI]: The 1 tasks files collected below specified root at example/minimal-tree/tasks/wun are:
 INFO [PUTKI]: - example/minimal-tree/tasks/wun
@@ -60,31 +135,31 @@ INFO [PUTKI]:
 INFO [PUTKI]: OK
 ```
 
-### Verification - Help
+### Tasks - Help
 
 (WIP)
 
 ```console
-❯ putki verify --help
+❯ putki tasks --help
 
- Usage: putki verify [OPTIONS] [DOC_ROOT_POS]
+ Usage: putki tasks [OPTIONS] [DOC_ROOT_POS]
 
  Verify the structure definition against the file system.
 
-╭─ Arguments ─────────────────────────────────────────────────────────────────────────────────╮
-│   doc_root_pos      [DOC_ROOT_POS]                                                          │
-╰─────────────────────────────────────────────────────────────────────────────────────────────╯
-╭─ Options ───────────────────────────────────────────────────────────────────────────────────╮
-│ --document-root  -d      TEXT  Root of the document tree to visit. Optional (default:       │
-│                                positional tree root value)                                  │
-│ --structure      -s      TEXT  structure mapping file (default: {DEFAULT_STRUCTURE_NAME})   │
-│                                [default: structure.yml]                                     │
-│ --target         -t      TEXT  target document key                                          │
-│ --facet          -f      TEXT  facet key of target document                                 │
-│ --verbose        -v            Verbose output (default is False)                            │
-│ --strict         -s            Ouput noisy warnings on console (default is False)           │
-│ --help           -h            Show this message and exit.                                  │
-╰─────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Arguments ─────────────────────────────────────────────────────────────────────────────────────╮
+│   doc_root_pos      [DOC_ROOT_POS]                                                              │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Options ───────────────────────────────────────────────────────────────────────────────────────╮
+│ --document-root  -d      TEXT  Root of the document tree to visit. Optional (default:           │
+│                                positional tree root value)                                      │
+│ --structure      -s      TEXT  structure mapping file (default: {DEFAULT_STRUCTURE_NAME})       │
+│                                [default: structure.yml]                                         │
+│ --target         -t      TEXT  target document key                                              │
+│ --facet          -f      TEXT  facet key of target document                                     │
+│ --verbose        -v            Verbose output (default is False)                                │
+│ --strict         -s            Ouput noisy warnings on console (default is False)               │
+│ --help           -h            Show this message and exit.                                      │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────╯
 ```
 
 ## Version
@@ -93,7 +168,7 @@ Asking for the version:
 
 ```console
 ❯ putki version
-Pipeline (Finnish: putki) - discovering and executing a specific task description. version 2023.3.20+parent.94c09fdc
+Pipeline (Finnish: putki) - discovering and executing a specific task description. version 2023.10.8+parent.gd4187e22
 ```
 
 ### Version - Help
@@ -107,9 +182,9 @@ For completeness:
 
  Display the application version and exit.
 
-╭─ Options ───────────────────────────────────────────────────────────────────────────────────╮
-│ --help  -h        Show this message and exit.                                               │
-╰─────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Options ───────────────────────────────────────────────────────────────────────────────────────╮
+│ --help  -h        Show this message and exit.                                                   │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────╯
 ```
 
 ## Discovery
