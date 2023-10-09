@@ -30,9 +30,11 @@ LOG_FOLDER = pathlib.Path('logs')
 LOG_FILE = f'{APP_ALIAS}.log'
 LOG_PATH = pathlib.Path(LOG_FOLDER, LOG_FILE) if LOG_FOLDER.is_dir() else pathlib.Path(LOG_FILE)
 LOG_LEVEL = logging.INFO
-
+VERSION = __version__
+VERSION_DOTTED_TRIPLE = '.'.join(__version_info__[:3])
 TS_FORMAT_LOG = '%Y-%m-%dT%H:%M:%S'
 TS_FORMAT_PAYLOADS = '%Y-%m-%d %H:%M:%S.%f UTC'
+TS_FORMAT_GENERATOR = '%Y-%m-%d %H:%M:%S.%f +00:00'
 
 __all__: List[str] = [
     'APP_ALIAS',
@@ -43,6 +45,9 @@ __all__: List[str] = [
     'DEFAULT_STRUCTURE_NAME',
     'DEFAULT_STRUCTURES_NAME',
     'ENCODING',
+    'TS_FORMAT_GENERATOR',
+    'VERSION',
+    'VERSION_DOTTED_TRIPLE',
     'log',
 ]
 

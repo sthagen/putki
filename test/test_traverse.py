@@ -89,6 +89,7 @@ def test_follow_example_s_wrong_place():
     assert root
     assert claims
 
+
 def test_follow_example_s_change_place():
     saved_path = pathlib.Path.cwd()
     os.chdir('example/s/')

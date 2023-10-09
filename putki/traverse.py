@@ -1,15 +1,61 @@
 """Ensure all components have render folders with pipe harness."""
+import datetime as dti
 import pathlib
 from typing import Any, Union
 
 import yaml
-from putki import ENCODING, log
+from putki import APP_ALIAS, ENCODING, TS_FORMAT_GENERATOR, VERSION, VERSION_DOTTED_TRIPLE, log
 
 Path = Union[str, pathlib.Path]
 
 ROI = 'component'
 STRUCTURES = 'structures.yml'
 UNDERSCORE = '_'
+EXECUTION_TS = dti.datetime.now(dti.timezone.utc).strftime(TS_FORMAT_GENERATOR)
+GENERATOR_DATA = {
+    'executed': EXECUTION_TS,
+    'name': APP_ALIAS,
+    'package_url': f'https://pypi.org/project/putki/{VERSION_DOTTED_TRIPLE}/',
+    'purl': f'pkg:pypi/putki@{VERSION_DOTTED_TRIPLE}',
+    'version': VERSION,
+}
+FACET_DOCS: dict[str, dict[str, Any]] = {}
+FACET_DOC_TEMPLATE: dict[str, Any] = {
+    'binder': [],
+    'code': None,
+    'component_source_folder_url': None,
+    'consistent': False,
+    'date': '',
+    'declaration_paths_resolved': {},
+    'distribution': '',
+    'document_approval': None,
+    'document_author': None,
+    'document_authorization': None,
+    'document_changes': [],
+    'document_review_list': [],
+    'effective_meta': {},
+    'facet': '',
+    'generator': GENERATOR_DATA,
+    'html': False,
+    'issue': None,
+    'lang': 'en',
+    'list_of_figures': False,
+    'list_of_tables': False,
+    'pdf': True,
+    'pdf_compiles': False,
+    'pdf_document_assets_url': None,
+    'pdf_document_url': None,
+    'pdf_log_url': None,
+    'perspective': None,
+    'publication_number': None,
+    'render': True,
+    'revision': None,
+    'subtitle': None,
+    'target': None,
+    'title': None,
+    'table_of_content_level': None,
+    'type': None,
+}
 
 
 def is_path(value: Union[bool, str]) -> bool:
@@ -99,8 +145,8 @@ def follow(structures_path: Path) -> tuple[int, str, pathlib.Path, dict[str, Any
             ssp = sub_p.parent / structure_path_str
             structure_info = load_yaml(ssp)
             if structure_info:
-              for facet in structure_info[target]:
-                  validate_facet(facet, ssp)
+                for facet in structure_info[target]:
+                    validate_facet(facet, ssp)
     return 0, '', root_path, claims
 
 
@@ -109,7 +155,12 @@ def walk_fs(claims: dict[str, Any], root_path: Path) -> int:
     root_path = pathlib.Path(root_path)
     roi_path = root_path / ROI
     cp_declared = [claim for claim in claims]
-    component_paths = [p for p in sorted(roi_path.iterdir()) if p.is_dir()]
+    try:
+        roi_items_ordered = sorted(roi_path.iterdir())
+    except FileNotFoundError as err:
+        log.error(err)
+        roi_items_ordered = []
+    component_paths = [p for p in roi_items_ordered if p.is_dir()]
     components = [f'{p.name}' for p in component_paths]
 
     log.info('Components (from folders):')
