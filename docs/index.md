@@ -8,7 +8,7 @@ Pipeline (Finnish: putki) - discovering and executing a specific task descriptio
 [![Configuration](badges/configuration-sbom.svg)](third-party/index.html)
 
 [![Version](https://img.shields.io/pypi/v/putki.svg?style=flat)](https://pypi.python.org/pypi/putki/)
-[![Downloads](https://static.pepy.tech/badge/putki/month)](https://pepy.tech/project/putki)
+[![Downloads](docs/badges/downloads-per-month.svg)](https://pepy.tech/project/putki)
 [![Supported Versions](https://img.shields.io/pypi/pyversions/putki.svg?style=flat)](https://pypi.python.org/pypi/putki/)
 [![Maintenance Status](docs/badges/commits-per-year.svg)](https://git.sr.ht/~sthagen/putki/log)
 
