@@ -2,7 +2,7 @@
 import os
 import pathlib
 import sys
-from typing import Union
+from typing import Any, Union
 
 import yaml
 
@@ -22,7 +22,7 @@ STRUCTURE = 'structure'
 STRUCTURES = f'{STRUCTURE}s'
 
 
-def read_structures(path: Union[str, pathlib.Path]) -> dict[str, dict[str, str]]:
+def read_structures(path: Union[str, pathlib.Path]) -> Union[dict[str, dict[str, str]], Any]:
     """Return the data of the structures."""
     with open(path, 'rt', encoding='utf-8') as handle:
         return yaml.safe_load(handle)
@@ -62,7 +62,7 @@ def elucidate(area: str, perspectives: list[str]) -> int:
                 cs = cd[STRUCTURES]
                 for k, v in cs.items():
                     val = v.strip()
-                    vp = pathlib.Path(val)
+                    vp = part_path / val
                     if not vp.is_file():
                         print(f'    - {STRUCTURE} path ({vp}) does not exist - skipping target ({k})', file=sys.stderr)
                         continue
