@@ -1,5 +1,8 @@
 # Changes
 
+2023.11.29
+:    * Fixed noisy exceptions from naive key access in traversal (<https://todo.sr.ht/~sthagen/putki/8>)
+
 2023.10.8
 :    * Changed API to verify tasks and structures
 
