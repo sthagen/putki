@@ -145,8 +145,13 @@ def follow(structures_path: Path) -> tuple[int, str, pathlib.Path, dict[str, Any
             ssp = sub_p.parent / structure_path_str
             structure_info = load_yaml(ssp)
             if structure_info:
-                for facet in structure_info[target]:
-                    validate_facet(facet, ssp)
+                facets = structure_info.get(target)
+                if facets is None:
+                    log.warning(f'target ({target}) not found in data - skipping facet validation')
+                else:
+                    for facet in facets:
+                        validate_facet(facet, ssp)
+
     return 0, '', root_path, claims
 
 
