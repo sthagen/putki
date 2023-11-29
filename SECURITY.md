@@ -4,10 +4,10 @@
 
 Versions of putki currently being supported with security updates.
 
-| Version(s)  | Supported |
-|:----------- |:--------- |
-| 2023.10.8   | yes       |
-| < 2023.10.8 | no        |
+| Version(s)   | Supported |
+|:-------------|:----------|
+| 2023.11.29   | yes       |
+| < 2023.11.29 | no        |
 
 ## Reporting a Vulnerability
 
