@@ -1,7 +1,7 @@
 {
   "putki": {
-    "version": "7.3.2",
-    "timestamp": "2023-12-02T15:32:12.601383",
+    "coverage_tool_version": "7.3.2",
+    "timestamp": "2023-12-02 16:29:20 +00:00",
     "branch_coverage": true,
     "show_contexts": true,
     "covered_lines": 175,
@@ -13,6 +13,25 @@
     "num_branches": 128,
     "num_partial_branches": 6,
     "covered_branches": 52,
-    "missing_branches": 76
+    "missing_branches": 76,
+    "node_id": "c79891e5-aabf-3a83-95b9-588edcd8327f",
+    "nfiles": 6,
+    "files": [
+      "putki/__init__.py",
+      "putki/api.py",
+      "putki/cli.py",
+      "putki/discover.py",
+      "putki/things.py",
+      "putki/traverse.py"
+    ],
+    "blake3": "551ee43f51bafec45fa9d2e86b25fa1351ac3cdf68f4a9e0a48f7933cbaaac78",
+    "blake2": "b19b8751ec0f6172574d37e752aa49f5d7335989a8d3c0449fd132372bdfc8816d8b454aa3ed33c5783a9621f2c315a22217c31b536894a6b1a210856c97ff05",
+    "sha512": "07c3ac1367aafdc4781bb77fda1504cabee5fe98c64101b93d57103099f90010e4e5180ca29ca3ac968474607be5c26ce7874250b24743027dca0ad078ea1908",
+    "sha384": "11aa34f9557c3417f940957e9d83739a3d62b14a6718a89c2033b231ee1a96d0f6cf93ec16042d7e06f2c840735e9ca8",
+    "sha256": "59a477e27c9ae513d97e290332b3e808a1088d2fa69a8ada3557a6ca1ee25a75",
+    "sha1": "1e022037736e7c75d59d4cfb4f10a93ff6df682f",
+    "md5": "0fc8d07057119eec45cf8b7e5a61677e",
+    "python_version": "3.10.12",
+    "entropy": 4.882271
   }
 }
