@@ -1,4 +1,4 @@
-dulwich==0.21.6
+dulwich==0.21.7
 └── urllib3 [required: >=1.25, installed: 2.0.4]
 GitPython==3.1.40
 └── gitdb [required: >=4.0.1,<5, installed: 4.0.10]

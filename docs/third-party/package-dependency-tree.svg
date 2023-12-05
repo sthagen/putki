@@ -55,7 +55,7 @@
 <title>dulwich</title>
 <ellipse fill="none" stroke="black" cx="277.56" cy="-249.96" rx="42.07" ry="28.99"/>
 <text text-anchor="middle" x="277.56" y="-253.16" font-family="Times,serif" font-size="14.00">dulwich</text>
-<text text-anchor="middle" x="277.56" y="-236.66" font-family="Times,serif" font-size="14.00">0.21.6</text>
+<text text-anchor="middle" x="277.56" y="-236.66" font-family="Times,serif" font-size="14.00">0.21.7</text>
 </g>
 <!-- urllib3 -->
 <g id="node6" class="node">
