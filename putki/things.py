@@ -1,4 +1,5 @@
 """Identification of parts given an area and perspectives from the declaration of structures."""
+
 import os
 import pathlib
 import sys

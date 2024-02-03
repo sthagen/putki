@@ -1,4 +1,5 @@
 """Command line interface for pipeline (Finnish: putki) - discovering and executing a specific task description."""
+
 import logging
 import pathlib
 import sys
