@@ -21,6 +21,7 @@
       "last_month": -1,
       "last_week": -1
     },
+    "dynamic": null,
     "home_page": "",
     "keywords": "developer-tools,devops",
     "license": "",
@@ -37,6 +38,7 @@
       "Source-Code": "https://git.sr.ht/~sthagen/putki",
       "Test-Coverage": "https://codes.dilettant.life/coverage/putki"
     },
+    "provides_extra": null,
     "release_url": "https://pypi.org/project/putki/2023.11.29/",
     "requires_dist": [
       "GitPython >=3.1.40",
