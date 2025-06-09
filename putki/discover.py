@@ -69,7 +69,7 @@ def assemble_path(path_elements: dict[str, str]) -> str:
 
 @no_type_check
 def derive(
-    tasks_seq: list[dict[str, Union[str, dict[str, str]]]]
+    tasks_seq: list[dict[str, Union[str, dict[str, str]]]],
 ) -> dict[str, dict[str, Union[str, int, dict[str, str]]]]:
     """Derive map with actionable names by mapping the path prefixed ids and assembling path elements."""
     actions: dict[str, dict[str, Union[str, int, dict[str, str]]]] = {}
